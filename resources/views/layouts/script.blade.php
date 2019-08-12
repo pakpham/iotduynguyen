@@ -1,4 +1,4 @@
-
+        <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
        <script>
         var data_ss1=[], data_ss2=[], data_ss3 = [], data_ss4=[];
         var temp1 = new Array();
@@ -187,6 +187,19 @@
         }
             
         }); 
+    
 
-// TIME PICKER
+
+      Pusher.logToConsole = true;
+      var pusher = new Pusher('a51f96b99684c0b3c2c6', {
+        cluster: 'ap1',
+        forceTLS: true
+      });
+
+      var channel = pusher.subscribe('my-channel');
+      channel.bind('my-event', function(data) {
+        alert(JSON.stringify(data));
+      });
+
+      alert("UPDATE RealTime Controller using Pusher API ")
     </script>

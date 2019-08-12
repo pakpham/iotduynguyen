@@ -11,13 +11,23 @@
 |
 */
 
+
+Route::get('/pusher', function() {
+    event(new App\Events\PusherEvent("UPDATE RealTime Controller using Pusher API "));
+    //event(new PusherEvent('hello world'));
+    return "Event has been sent!";
+});
+
+Route::get('/clentpusher', function(){
+	return view ('test-pusher');
+});
+
 Route::get('/', function () {
 	if(!Auth::check()){
 		return view('admin.login');
 	} else{
 		return redirect()->route('home-admin');
 	}
-	
 });
 // Route::get('/home', 'pakController@getHome');
 // Route::get('/get-test', 'pakController@getTest');

@@ -91,6 +91,8 @@ class pakController extends Controller
       for ($i = 4; $i >=0 ; $i--) { 
         $last_data[$i] = App\DataSensor::where('id','=',$last_id-$i)->get()[0];
       }
+      
+      event(new App\Events\PusherEvent("UPDATE RealTime Controller using Pusher API "));
       return view ('pages.home', ['last_data' => $last_data,'data_avg'=>$data_avg]);
     }else{
       $last_data = [];

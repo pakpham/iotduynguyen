@@ -56,5 +56,6 @@ return array(
     'f190e3308e6ca23234a2875edc985c03' => $vendorDir . '/markbaker/complex/classes/src/operations/divideby.php',
     'ac9e33ce6841aa5bf5d16d465a2f03a7' => $vendorDir . '/markbaker/complex/classes/src/operations/divideinto.php',
     '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+    '3109cb1a231dcd04bee1f9f620d46975' => $vendorDir . '/paragonie/sodium_compat/autoload.php',
     '801c31d8ed748cfa537fa45402288c95' => $vendorDir . '/psy/psysh/src/functions.php',
 );
