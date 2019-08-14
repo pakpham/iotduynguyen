@@ -182,14 +182,9 @@
                     }
                 });
             }
-
-
         }
-            
         }); 
-    
-
-
+  
       Pusher.logToConsole = true;
       var pusher = new Pusher('a51f96b99684c0b3c2c6', {
         cluster: 'ap1',
@@ -198,8 +193,19 @@
 
       var channel = pusher.subscribe('my-channel');
       channel.bind('my-event', function(data) {
+        var ss1 = data.ss1;
+        var ss2 = data.ss2;
+        var ss3 = data.ss3;
+        var ss4 = data.ss4;
         alert(JSON.stringify(data));
+        console.log("DATA PUSHER:");
+        //console.log(data.name);
+        document.getElementById("value-ss1").innerHTML = ss1;
+        document.getElementById("value-ss2").innerHTML = ss2;
+        document.getElementById("value-ss3").innerHTML = ss3;
+        document.getElementById("value-ss4").innerHTML = ss3;
       });
 
-      alert("UPDATE RealTime Controller using Pusher API ")
+
+      //{"ss1":"11","ss2":"22","ss3":"33","ss4":"44"}
     </script>

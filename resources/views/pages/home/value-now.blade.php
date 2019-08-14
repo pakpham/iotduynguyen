@@ -18,10 +18,10 @@
          <div class="stat-content">
            <div class="text-left dib"> 
              <div class="stat-text">
-              <span class="count">
+              <span class="count" id="value-ss1">
                 @if(isset($last_data[0]->ss1))
                 {{$last_data[0]->ss1}}
-                @endif
+                @endif  
               </span>
             </div>
             <div class="stat-heading">Cảm biến 1</div>
@@ -41,7 +41,7 @@
        </div>
        <div class="stat-content">
          <div class="text-left dib">
-           <div class="stat-text"><span class="count">@if(isset($last_data[0]->ss2))
+           <div class="stat-text"><span  class="count" id="value-ss2">@if(isset($last_data[0]->ss2))
             {{$last_data[0]->ss2}}
           @endif</span></div>
           <div class="stat-heading">Cảm biến 2</div> 
@@ -61,7 +61,7 @@
        </div>
        <div class="stat-content">
          <div class="text-left dib"> 
-           <div class="stat-text"><span class="count">@if(isset($last_data[0]->ss3))
+           <div class="stat-text"><span class="count" id="value-ss3">@if(isset($last_data[0]->ss3))
             {{$last_data[0]->ss3}}
           @endif</span></div>
           <div class="stat-heading">Cảm biến 3</div>
@@ -81,7 +81,7 @@
        </div>
        <div class="stat-content">
          <div class="text-left dib"> 
-           <div class="stat-text"><span class="count">@if(isset($last_data[0]->ss4))
+           <div class="stat-text"><span class="count" id="value-ss4">@if(isset($last_data[0]->ss4))
             {{$last_data[0]->ss4}}
           @endif</span></div>
           <div class="stat-heading">Cảm biến 4</div>
