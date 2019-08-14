@@ -197,13 +197,13 @@
         var ss2 = data.ss2;
         var ss3 = data.ss3;
         var ss4 = data.ss4;
-        alert(JSON.stringify(data));
+        //alert(JSON.stringify(data));
         console.log("DATA PUSHER:");
         //console.log(data.name);
         document.getElementById("value-ss1").innerHTML = ss1;
         document.getElementById("value-ss2").innerHTML = ss2;
         document.getElementById("value-ss3").innerHTML = ss3;
-        document.getElementById("value-ss4").innerHTML = ss3;
+        document.getElementById("value-ss4").innerHTML = ss4;
       });
 
 
