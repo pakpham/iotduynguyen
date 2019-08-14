@@ -193,10 +193,10 @@
 
       var channel = pusher.subscribe('my-channel');
       channel.bind('my-event', function(data) {
-        var ss1 = data.ss1;
-        var ss2 = data.ss2;
-        var ss3 = data.ss3;
-        var ss4 = data.ss4;
+        var ss1 = data.message.ss1;
+        var ss2 = data.message.ss2;
+        var ss3 = data.message.ss3;
+        var ss4 = data.message.ss4;
         //alert(JSON.stringify(data));
         console.log("DATA PUSHER:");
         //console.log(data.name);
