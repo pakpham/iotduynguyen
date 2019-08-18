@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    <h5><b>Dữ liệu gần nhất: </b> <b style="color: red">
+    <h5><b>Dữ liệu gần nhất: </b> <b style="color: red" id="created-at">
       @if(isset($last_data[0]->ss1))
                 {{$last_data[0]->created_at}}
       @endif

@@ -4,7 +4,24 @@
      <div class="card-body">
       <h4 class="box-title">Biểu đồ dữ liệu trong ngày </h4>
      </div>
-
+       <div class="row">
+          <div class="col-lg-10">
+            <form method="get" action="query-data" id="form-query-data">
+              <div class="row">
+                <div class="col-lg-3">
+                  <input class="datepicker-start" data-date-format="mm/dd/yyyy" id="date-start" name="date_start" value="TODAY">
+                </div>
+                <div class="col-lg-3">
+                  <input class="datepicker-end" data-date-format="mm/dd/yyyy" id="date-end"  name="date_end" value="TODAY">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-2">
+            <button onclick="queryData()">Xac nhan</button>
+          </div>
+        </div>
+      <hr>
      <div class="row"> 
        <div class="col-lg-6">
          <div class="card-header">Cảm biến 1</div>

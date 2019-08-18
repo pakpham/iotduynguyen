@@ -74,6 +74,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function(){
 	Route::get('/table-ss3', 'TableSensor@getSs3');
 	Route::get('/table-ss4', 'TableSensor@getSs4');
 	Route::post('get-chart', 'TableSensor@getData')->name('get-data-chart');
+	Route::get('/query-data','ajaxController@queryData');
 
 
 	Route::get('/chart-1', function(){

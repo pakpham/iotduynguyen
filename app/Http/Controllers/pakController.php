@@ -8,6 +8,9 @@ use App;
 
 class pakController extends Controller
 {
+  public function queryData(Request $request){
+    return $request;
+  }
 
   public function addUser ($name, $pass){
     $data = New App\User();
@@ -30,16 +33,12 @@ class pakController extends Controller
     $data->ss2 = $request -> data2; 
     $data->ss3 = $request -> data3;
     $data->ss4 = $request -> data4;
-    
     //$data_rt = new \stdClass();
-    
-
     $data->id_station = 1;
     $data->save();
     //return "Saved to DataBase ";
-
     event(new App\Events\PusherEvent($data));
-    return "ADD DONE";
+    return $data->created_at;
   }
   public function addData(Request $request){
     return $request->name;
