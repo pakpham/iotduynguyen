@@ -242,9 +242,21 @@
               data_ss =  data;
               sapxepDulieu(data_ss);
               drawChart();
+              document.getElementById("down-data").classList.remove("disabled");
            }
         });
       }
+
+      function dowData(){
+        date_start = document.getElementById('date-start').value;
+        date_end = document.getElementById('date-end').value;
+        console.log(date_start+'==='+date_end);
+        var urldown = "http://iotduynguyen.cf/public/admin/export-data/"+date_start+"/"+date_end;
+        console.log(urldown);
+        window.location.href = urldown;
+      }
+
+
     </script>
 
 

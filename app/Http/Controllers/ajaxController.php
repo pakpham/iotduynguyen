@@ -21,7 +21,7 @@ class ajaxController extends Controller
     	$date_end = $request->date_end." 00:00:00";
     	$data = App\DataSensor::whereBetween('created_at',[$date_start,$date_end])->get();
 
-    	$temp = App\DataSensor::where("id","1518")->value("created_at");
+    	//$temp = App\DataSensor::where("id","1518")->value("created_at");
     	//return $date_start.'===='.$temp;
     	return $data;
   	}

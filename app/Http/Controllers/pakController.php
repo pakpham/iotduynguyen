@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Excel;
+use App\Exports\UsersExport;
+use App\Imports\UsersImport;
+use Maatwebsite\Excel\Facades\Excel;
 use App;
+
 
 class pakController extends Controller
 {
@@ -139,4 +142,28 @@ class pakController extends Controller
     }
     else echo "Ban chua dang nhap";
   }
+
+  ///////////////////////////////////////////////////////
+      public function importExportView()
+    {
+       return view('import');
+    }
+   
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function export(Request $request) 
+    {
+        return Excel::download(new UsersExport, 'data-sensor.xlsx');
+    }
+   
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function import() 
+    {
+        Excel::import(new UsersImport,request()->file('file'));
+           
+        return back();
+    }
 }

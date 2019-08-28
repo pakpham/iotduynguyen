@@ -85,6 +85,10 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function(){
 		return view ('pages.test1');
 	});
 
+	Route::get('export-data/{date_state}/{date_end}', 'pakController@export')->name('export');
+	Route::get('importExportView', 'pakController@importExportView');
+	Route::post('import', 'pakController@import')->name('import');
+
 });
 
 Route::group(['prefix'=>'ajax'], function(){

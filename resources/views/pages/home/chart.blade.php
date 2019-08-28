@@ -5,7 +5,7 @@
       <h4 class="box-title">Biểu đồ dữ liệu trong ngày </h4>
      </div>
        <div class="row">
-          <div class="col-lg-10">
+          <div class="col-lg-8">
             <form method="get" action="query-data" id="form-query-data">
               <div class="row">
                 <div class="col-lg-3">
@@ -18,7 +18,10 @@
             </form>
           </div>
           <div class="col-lg-2">
-            <button onclick="queryData()">Xac nhan</button>
+            <button button type="button" class="btn btn-sm btn-primary" onclick="queryData()">Vẽ Biểu Đồ</button>
+          </div>
+          <div class="col-lg-2">
+            <button  type="button" class="btn btn-primary btn-sm disabled" onclick="dowData()"  id="down-data">Tải Dữ Liệu</button>
           </div>
         </div>
       <hr>
