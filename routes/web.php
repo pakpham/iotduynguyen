@@ -45,6 +45,9 @@ Route::post('post-test', 'pakController@addDataSensor')->name('post-test');
 Route::get('add-user/{name}/{pass}', 'pakController@addUser');
 Route::get('add-data/{data1}/{data2}/{data3}/{data4}', 'pakController@addDataSensor');
 
+Route::get('add-data-2/{data1}/{data2}/{data3}/{data4}', 'pakController@addDataSensor2');
+
+
 
 
 /////////////////////////////////////////////////////////////////////////

@@ -43,6 +43,21 @@ class pakController extends Controller
     event(new App\Events\PusherEvent($data));
     return $data->created_at;
   }
+  public function addDataSensor2(Request $request){
+    $data = New App\DataSensor();
+    $data->ss1 = $request -> data1;
+    $data->ss2 = $request -> data2; 
+    $data->ss3 = $request -> data3;
+    $data->ss4 = $request -> data4;
+    //$data_rt = new \stdClass();
+    $data->id_station = 1;
+    $data->save();
+    //return "Saved to DataBase ";
+    event(new App\Events\PusherEvent($data));
+    return $data->created_at;
+  }
+
+  
   public function addData(Request $request){
     return $request->name;
   }
