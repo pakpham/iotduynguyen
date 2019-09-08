@@ -44,7 +44,7 @@ class pakController extends Controller
     return $data->created_at;
   }
   public function addDataSensor2(Request $request){
-    $data = New App\DataSensor();
+    $data = New App\DataSensor2();
     $data->ss1 = $request -> data1;
     $data->ss2 = $request -> data2; 
     $data->ss3 = $request -> data3;
@@ -84,6 +84,18 @@ class pakController extends Controller
     $ss3_2 = $data_2->avg('ss3'); $ss4_2 = $data_2->avg('ss4');
     $data_3 = App\DataSensor::whereBetween('created_at', [$date_from_3, $date_to_3]) -> orderBy('id')->get();
 
+
+    ////////////////////    STATETION 2   /////////////////////////
+    $data2 = App\DataSensor2::whereBetween('created_at', [$date_from, $date_to]) -> orderBy('id')->get();
+    // $data2_1 = App\DataSensor2::whereBetween('created_at', [$date_from_1, $date_to_1]) -> orderBy('id')->get();
+    
+    // $data2_2 = App\DataSensor2::whereBetween('created_at', [$date_from_2, $date_to_2]) -> orderBy('id')->get();
+    // $ss21_2 = $data2_2->avg('ss1'); $ss2_2 = $data_2->avg('ss2'); 
+    // $ss23_2 = $data2_2->avg('ss3'); $ss4_2 = $data_2->avg('ss4');
+    // $data2_3 = App\DataSensor::whereBetween('created_at', [$date_from_3, $date_to_3]) -> orderBy('id')->get();
+    /////////////////       END STATETION 2    ////////////////
+
+
     $obj = New App\DataSensor;
     $obj_1 = New App\DataSensor;
     $obj_2 = New App\DataSensor;
@@ -109,14 +121,23 @@ class pakController extends Controller
       $obj, $obj_1, $obj_2, $obj_3
     ];
     $last_data;
+    $last_data_2;
     if($data->count() > 0 ){
       $last_id = $data[$data->count()-1]->id;
       for ($i = 4; $i >=0 ; $i--) { 
         $last_data[$i] = App\DataSensor::where('id','=',$last_id-$i)->get()[0];
       }
-      
-      event(new App\Events\PusherEvent("UPDATE RealTime Controller using Pusher API "));
-      return view ('pages.home', ['last_data' => $last_data,'data_avg'=>$data_avg]);
+
+      //////  Last Data Station 2 ///////////
+      $last_id_2 = $data2[$data2->count()-1]->id;
+      for ($i = 4; $i >=0 ; $i--) { 
+        $last_data_2[$i] = App\DataSensor2::where('id','=',$last_id_2-$i)->get()[0];
+      }
+      /////  End last Data Station 2 /////////
+
+
+      //event(new App\Events\PusherEvent("UPDATE RealTime Controller using Pusher API "));
+      return view ('pages.home', ['last_data' => $last_data, 'last_data_2'=>$last_data_2, 'data_avg'=>$data_avg]);
     }else{
       $last_data = [];
       return view('pages.home',['data_avg'=>$data_avg]);
