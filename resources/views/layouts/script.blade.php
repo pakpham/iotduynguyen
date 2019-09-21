@@ -1,146 +1,20 @@
         <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
        <script>
-        var data_ss, data_ss1=[], data_ss2=[], data_ss3 = [], data_ss4=[];
+        var data_ss;
+        var data_ss11=[], data_ss21=[], data_ss31 = [], data_ss41=[];
+        var data_ss12=[], data_ss22=[], data_ss32 = [], data_ss42=[];
+
         var d = new Date();
         var date_start = d.getFullYear()+"-"+d.getMonth()+"-" + d.getDate()+ " 00:00:00";
         var date_end = d.getFullYear()+"-"+d.getMonth()+"-" + d.getDate()+ " 23:59:59";
         var temp1 = new Array();
-//==============================================================================
-        function drawChart(){
-              // Traffic Chart using chartist
-              if ($('#traffic-chart-1').length) {
-                  var chart = new Chartist.Line('#traffic-chart-1', {
-                    //labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    series: [
-                    data_ss1
-                   // [0, 33000, 15000,  20000,  15000,  300]
-                    ]
-                }, {
-                    low: 0,
-                    showArea: true,
-                    showLine: false,
-                    showPoint: false,
-                    fullWidth: true,
-                    axisX: {
-                      showGrid: true
-                  }
-              });
 
-                  chart.on('draw', function(data) {
-                      if(data.type === 'line' || data.type === 'area') {
-                          data.element.animate({
-                              d: {
-                                  begin: 2000 * data.index,
-                                  dur: 2000,
-                                  from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                                  to: data.path.clone().stringify(),
-                                  easing: Chartist.Svg.Easing.easeOutQuint
-                              }
-                          });
-                      }
-                  });
-              }
-              //22222222222222222222222222222222222222222222222222222222222//
-              if ($('#traffic-chart-2').length) {
-                  var chart = new Chartist.Line('#traffic-chart-2', {
-                    //labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    series: [[],
-                    data_ss2
-                   // [0, 33000, 15000,  20000,  15000,  300]
-                    ]
-                }, {
-                    low: 0,
-                    showArea: true,
-                    showLine: false,
-                    showPoint: false,
-                    fullWidth: true,
-                    axisX: {
-                      showGrid: true
-                  }
-              });
 
-                  chart.on('draw', function(data) {
-                      if(data.type === 'line' || data.type === 'area') {
-                          data.element.animate({
-                              d: {
-                                  begin: 2000 * data.index,
-                                  dur: 2000,
-                                  from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                                  to: data.path.clone().stringify(),
-                                  easing: Chartist.Svg.Easing.easeOutQuint
-                              }
-                          });
-                      }
-                  });
-              }
 
-              //3333333333333333333333333333333333333333333333333333333333333//
-              if ($('#traffic-chart-3').length) {
-                  var chart = new Chartist.Line('#traffic-chart-3', {
-                    //labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    series: [[],[],
-                    data_ss3
-                   // [0, 33000, 15000,  20000,  15000,  300]
-                    ]
-                }, {
-                    low: 0,
-                    showArea: true,
-                    showLine: false,
-                    showPoint: false,
-                    fullWidth: true,
-                    axisX: {
-                      showGrid: true
-                  }
-              });
 
-                  chart.on('draw', function(data) {
-                      if(data.type === 'line' || data.type === 'area') {
-                          data.element.animate({
-                              d: {
-                                  begin: 2000 * data.index,
-                                  dur: 2000,
-                                  from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                                  to: data.path.clone().stringify(),
-                                  easing: Chartist.Svg.Easing.easeOutQuint
-                              }
-                          });
-                      }
-                  });
-              }
-              //4444444444444444444444444444444444444444444444444444444444//
-              if ($('#traffic-chart-4').length) {
-                  var chart = new Chartist.Line('#traffic-chart-4', {
-                    //labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    series: [[],[],[],
-                    data_ss4
-                   // [0, 33000, 15000,  20000,  15000,  300]
-                    ]
-                }, {
-                    low: 0,
-                    showArea: true,
-                    showLine: false,
-                    showPoint: false,
-                    fullWidth: true,
-                    axisX: {
-                      showGrid: true
-                  }
-              });
-                  chart.on('draw', function(data) {
-                      if(data.type === 'line' || data.type === 'area') {
-                          data.element.animate({
-                              d: {
-                                  begin: 2000 * data.index,
-                                  dur: 2000,
-                                  from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                                  to: data.path.clone().stringify(),
-                                  easing: Chartist.Svg.Easing.easeOutQuint
-                              }
-                          });
-                      }
-                  });
-              }
-            }
-//===========================================================================
+
+
+
 
         function forEach(array, action){
           for(var i = 0; i < array.length; i++)
@@ -169,13 +43,11 @@
                         data_ss4[i] = value.ss4;
                         ++i;
                     });
-                    drawChart();
                 },
                 error: function (){
                     alert('Có lỗi xảy ra');
                 }
             });
-            drawChart();
         }); 
   
       Pusher.logToConsole = true;
@@ -186,19 +58,35 @@
 
       var channel = pusher.subscribe('my-channel');
       channel.bind('my-event', function(data) {
-        var ss1 = data.message.ss1;
-        var ss2 = data.message.ss2;
-        var ss3 = data.message.ss3;
-        var ss4 = data.message.ss4;
-        var created_at = data.message.created_at;
-        //alert(JSON.stringify(data));
-        console.log("DATA PUSHER:");
-        //console.log(data.name);
-        document.getElementById("value-ss1").innerHTML = ss1;
-        document.getElementById("value-ss2").innerHTML = ss2;
-        document.getElementById("value-ss3").innerHTML = ss3;
-        document.getElementById("value-ss4").innerHTML = ss4;
-        document.getElementById("created-at").innerHTML = created_at;
+        if (data.message.id_station == 1) {
+          var ss1 = data.message.ss1;
+          var ss2 = data.message.ss2;
+          var ss3 = data.message.ss3;
+          var ss4 = data.message.ss4;
+          var created_at = data.message.created_at;
+          //alert(JSON.stringify(data));
+          console.log("DATA PUSHER:");
+          //console.log(data.name);
+          document.getElementById("value-ss1").innerHTML = ss1;
+          document.getElementById("value-ss2").innerHTML = ss2;
+          document.getElementById("value-ss3").innerHTML = ss3;
+          document.getElementById("value-ss4").innerHTML = ss4;
+          document.getElementById("created-at").innerHTML = created_at;
+        } else if(data.message.id_station == 2){
+          var ss1 = data.message.ss1;
+          var ss2 = data.message.ss2;
+          var ss3 = data.message.ss3;
+          var ss4 = data.message.ss4;
+          var created_at = data.message.created_at;
+          //alert(JSON.stringify(data));
+          console.log("DATA PUSHER:");
+          //console.log(data.name);
+          document.getElementById("value-ss1-2").innerHTML = ss1;
+          document.getElementById("value-ss2-2").innerHTML = ss2;
+          document.getElementById("value-ss3-2").innerHTML = ss3;
+          document.getElementById("value-ss4-2").innerHTML = ss4;
+          document.getElementById("created-at-2").innerHTML = created_at;
+        }
       });
 
 
@@ -214,14 +102,7 @@
       });
 
 
-      function sapxepDulieu($dulieu){
-        for (var i = 0; i <data_ss.length; i++) {
-          data_ss1[i]  = data_ss[i].ss1;
-          data_ss2[i]  = data_ss[i].ss2;
-          data_ss3[i]  = data_ss[i].ss3;
-          data_ss4[i]  = data_ss[i].ss4;
-        };
-      };
+
       function queryData(){
         date_start = document.getElementById('date-start').value;
         date_end = document.getElementById('date-end').value;
@@ -241,7 +122,7 @@
               console.log(data);
               data_ss =  data;
               sapxepDulieu(data_ss);
-              drawChart();
+              window.onload = dothi();
               document.getElementById("down-data").classList.remove("disabled");
            }
         });
@@ -254,6 +135,27 @@
         var urldown = "http://iotduynguyen.cf/public/admin/export-data/"+date_start+"/"+date_end;
         console.log(urldown);
         window.location.href = urldown;
+      }
+
+      function sapxepDulieu(dulieu){
+        data1 = dulieu.data1;
+        data2 = dulieu.data2;
+        for (var i = 0; i <data1.length; i++) {
+          data_ss11[i] = {
+            x: sapxepNgay(data1[i].created_at), y: data1[i].ss1
+          } 
+        };
+        for (var i = 0; i <data2.length; i++) {
+          data_ss12[i] = {
+            x: sapxepNgay(data2[i].created_at), y: data2[i].ss1
+          } 
+        };
+        console.log("DATA1: " + data_ss11);
+      };
+
+      function sapxepNgay(dulieu){
+        var ngay = new Date(dulieu.slice(0,4),dulieu.slice(5,7),dulieu.slice(8,10),dulieu.slice(11,13),dulieu.slice(14,16),dulieu.slice(17,19));
+        return ngay;
       }
 
 
