@@ -82,7 +82,7 @@ var chart = new CanvasJS.Chart("chartContainer-1", {
     suffix : " s"
   },
   axisY: {
-    title: "Speed",
+    title: "Temperature",
     titleFontColor: "#4F81BC",
     suffix : " °C",
     lineColor: "#4F81BC",
@@ -99,7 +99,7 @@ var chart = new CanvasJS.Chart("chartContainer-1", {
     type: "spline",
     name: "Station 1",
     xValueFormatString: "'Day:'DD h'h'm'm's's'",
-    yValueFormatString: "#,##0.00 °C",
+    yValueFormatString: "#,## °C",
     dataPoints: data_ss11
   },
   {
