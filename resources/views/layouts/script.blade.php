@@ -1,5 +1,4 @@
  
-      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  
       <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
        <script>
         var date_now = Date("yyyy-mm-dd");
