@@ -99,8 +99,8 @@
     <script src="../assets/js/plugins.js"></script>
     <script src="../assets/js/main.js"></script>
 
-<!--     <script src="../assets/js/lib/chart-js/Chart.bundle.js"></script>
- -->
+    <script src="../assets/js/lib/chart-js/Chart.bundle.js"></script>
+
 
     <!--Chartist Chart-->
 <!--     <script src="../assets/js/lib/chartist/chartist.min.js"></script>
@@ -112,12 +112,12 @@
 
 
     <script src="../assets/weather/js/jquery.simpleWeather.min.js"></script>
-    <script src="../assets/weather/js/weather-init.js"></script>
+    <script src="../assets/weather/js/weather-init.js"></script> -->
 
 
     <script src="../assets/js/lib/moment/moment.js"></script>
     <script src="../assets/calendar/fullcalendar.min.js"></script>
-    <script src="../assets/calendar/fullcalendar-init.js"></script> -->
+    <script src="../assets/calendar/fullcalendar-init.js"></script>
 
     @include ('layouts.script')
 
