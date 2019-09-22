@@ -82,6 +82,19 @@ var data_temp = [
       { x: new Date(2019, 9, 2,1,2,3), y: 69 },
       { x: new Date(2019, 9, 2,1,2,3), y: 90 },
       { x: new Date(2019, 9, 2,1,2,3), y: 30 }];
+
+  
+
+    $(document).ready(function(){
+      $('.datepicker-start').datepicker({
+          format: 'yyyy-mm-dd',
+          startDate: '-3d'
+      });
+      $('.datepicker-end').datepicker({
+          format: 'yyyy-mm-dd',
+          startDate: '-3d'
+      });
+    });
 </script>
 
 

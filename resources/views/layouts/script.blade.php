@@ -88,15 +88,6 @@
 
       //{"ss1":"11","ss2":"22","ss3":"33","ss4":"44"}
 
-      $('.datepicker-start').datepicker({
-          format: 'yyyy-mm-dd',
-          startDate: '-3d'
-      });
-      $('.datepicker-end').datepicker({
-          format: 'yyyy-mm-dd',
-          startDate: '-3d'
-      });
-
 
 
       function queryData(){
