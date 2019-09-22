@@ -176,7 +176,8 @@
         data_ss41 = [];data_ss42 = [];
       }
       function sapxepNgay(dulieu){
-        var ngay = new Date(dulieu.slice(0,4),dulieu.slice(5,7),dulieu.slice(8,10),dulieu.slice(11,13),dulieu.slice(14,16),dulieu.slice(17,19));
+        //var ngay = new Date(dulieu.slice(0,4),dulieu.slice(5,7),dulieu.slice(8,10),dulieu.slice(11,13),dulieu.slice(14,16),dulieu.slice(17,19));
+        var ngay = new Date(2019,9,dulieu.slice(8,10),dulieu.slice(11,13),dulieu.slice(14,16),dulieu.slice(17,19));
         return ngay;
       }
 
