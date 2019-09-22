@@ -269,7 +269,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
   theme:"light2",
   animationEnabled: true,
   title:{
-    text: "Game of Thrones Viewers of the First Airing on HBO"
+    text: "Graegtadsjaef sfgsd f9rksf aka"
   },
   axisY :{
     includeZero: false,
@@ -297,7 +297,21 @@ var chart = new CanvasJS.Chart("chartContainer", {
     visible: false,
     yValueFormatString: "##.00mn",
     name: "Season 2",
-    dataPoints: []
+    dataPoints: [
+      { x: new Date(2019, 9, 2), y: 60 },
+      { x: new Date(2019, 9, 2), y: 70 },
+      { x: new Date(2019, 9, 2), y: 71 },
+      { x: new Date(2019, 9, 2), y: 65 },
+      { x: new Date(2019, 9, 2), y: 73 },
+      { x: new Date(2019, 9, 2), y: 96 },
+      { x: new Date(2019, 9, 2), y: 84 },
+      { x: new Date(2019, 9, 20), y: 83 },
+      { x: new Date(2019, 9, 21), y: 69 },
+      { x: new Date(2019, 9, 22), y: 43 },
+      { x: new Date(2019, 9, 23), y: 70 },
+      { x: new Date(2019, 9, 24), y: 69 },
+      { x: new Date(2019, 9, 25), y: 90 },
+      { x: new Date(2019, 9, 26), y: 30 }]
   }]  
 });
 chart.render();
