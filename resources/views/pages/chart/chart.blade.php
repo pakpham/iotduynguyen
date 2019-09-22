@@ -297,18 +297,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
     visible: false,
     yValueFormatString: "##.00mn",
     name: "Season 2",
-    dataPoints: [
-      { label: "Ep. 1", y: 3.86 },
-      { label: "Ep. 2", y: 3.76 },
-      { label: "Ep. 3", y: 3.77 },
-      { label: "Ep. 4", y: 3.65 },
-      { label: "Ep. 5", y: 3.90 },
-      { label: "Ep. 6", y: 3.88 },
-      { label: "Ep. 7", y: 3.69 },
-      { label: "Ep. 8", y: 3.86 },
-      { label: "Ep. 9", y: 3.38 },
-      { label: "Ep. 10", y: 4.20 }
-    ]
+    dataPoints: []
   }]  
 });
 chart.render();
