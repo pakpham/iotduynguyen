@@ -1,5 +1,7 @@
-        <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  
+      <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
        <script>
+        var date_now = Date("yyyy-mm-dd");
         var data_ss;
         var data_ss11=[], data_ss21=[], data_ss31 = [], data_ss41=[];
         var data_ss12=[], data_ss22=[], data_ss32 = [], data_ss42=[];
@@ -8,12 +10,6 @@
         var date_start = d.getFullYear()+"-"+d.getMonth()+"-" + d.getDate()+ " 00:00:00";
         var date_end = d.getFullYear()+"-"+d.getMonth()+"-" + d.getDate()+ " 23:59:59";
         var temp1 = new Array();
-
-
-
-
-
-
 
 
         function forEach(array, action){
@@ -120,7 +116,8 @@
            data:{date_start:date_start, date_end:date_end},
            success:function(data){
               console.log(data);
-              data_ss =  data;
+              resetData();
+              data_ss = data
               sapxepDulieu(data_ss);
               window.onload = dothi();
               document.getElementById("down-data").classList.remove("disabled");
@@ -128,18 +125,11 @@
         });
       }
 
-      function dowData(){
-        date_start = document.getElementById('date-start').value;
-        date_end = document.getElementById('date-end').value;
-        console.log(date_start+'==='+date_end);
-        var urldown = "http://iotduynguyen.cf/public/admin/export-data/"+date_start+"/"+date_end;
-        console.log(urldown);
-        window.location.href = urldown;
-      }
-
       function sapxepDulieu(dulieu){
         data1 = dulieu.data1;
         data2 = dulieu.data2;
+
+        // DATA SENSOR OF CHART 1 (SENSOR 1)
         for (var i = 0; i <data1.length; i++) {
           data_ss11[i] = {
             x: sapxepNgay(data1[i].created_at), y: data1[i].ss1
@@ -149,17 +139,62 @@
           data_ss12[i] = {
             x: sapxepNgay(data2[i].created_at), y: data2[i].ss1
           } 
+        }; 
+
+        // DATA SENSOR OF CHART 2 (SENSOR 2)
+        for (var i = 0; i <data1.length; i++) {
+          data_ss21[i] = {
+            x: sapxepNgay(data1[i].created_at), y: data1[i].ss2
+          } 
         };
-        console.log("DATA1: " + data_ss11);
+        for (var i = 0; i <data2.length; i++) {
+          data_ss22[i] = {
+            x: sapxepNgay(data2[i].created_at), y: data2[i].ss2
+          } 
+        }; 
+
+        //DATA SENSOR OF CHART 3 (SENSOR 3)
+        for (var i = 0; i <data1.length; i++) {
+          data_ss31[i] = {
+            x: sapxepNgay(data1[i].created_at), y: data1[i].ss3
+          } 
+        };
+        for (var i = 0; i <data2.length; i++) {
+          data_ss32[i] = {
+            x: sapxepNgay(data2[i].created_at), y: data2[i].ss3
+          } 
+        }; 
+
       };
 
+
+      function resetData(){
+        data_ss = [];
+        data_ss11 = [];data_ss12 = [];
+        data_ss21 = [];data_ss22 = [];
+        data_ss31 = [];data_ss32 = [];
+        data_ss41 = [];data_ss42 = [];
+      }
       function sapxepNgay(dulieu){
         var ngay = new Date(dulieu.slice(0,4),dulieu.slice(5,7),dulieu.slice(8,10),dulieu.slice(11,13),dulieu.slice(14,16),dulieu.slice(17,19));
         return ngay;
       }
 
-
     </script>
+
+
+
+<script type="text/javascript">
+      // .. DOWNLOAD DU LIEU
+      function dowData(){
+        date_start = document.getElementById('date-start').value;
+        date_end = document.getElementById('date-end').value;
+        console.log(date_start+'==='+date_end);
+        var urldown = "http://iotduynguyen.cf/public/admin/export-data/"+date_start+"/"+date_end;
+        console.log(urldown);
+        window.location.href = urldown;
+      }
+</script>
 
     
 

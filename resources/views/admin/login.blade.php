@@ -31,8 +31,8 @@
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="card">
-                    <div class="card-header"><h1 style="text-align: center;">NGUYÊN CỨU VÀ THIẾT KẾ BỘ CẢM BIẾN IOT CHO HOẠT ĐỘNG TRỒNG VƯỜN</h1></div>
-                    <div class="card-body" style="text-align: center;"> Nguyên Huỳnh Anh Duy - Khoa Công Nghệ - Đại học Cần Thơ</div>
+                    <div class="card-header"><h1 style="text-align: center;">NGHIÊN CỨU VÀ THIẾT KẾ BỘ CẢM BIẾN IOT CHO HOẠT ĐỘNG TRỒNG VƯỜN</h1></div>
+                    <div class="card-body" style="text-align: center;"> Nguyễn Huỳnh Anh Duy - Khoa Công Nghệ - Đại học Cần Thơ</div>
             </div>
             <div class="login-content">
                 

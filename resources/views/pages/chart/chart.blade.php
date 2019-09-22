@@ -26,35 +26,34 @@
         </div>
       <hr>
      <div class="row"> 
-       <div class="col-lg-6">
+       <div class="col-lg-12">
          <div class="card-header">Cảm biến 1</div>
          <div class="card-body"> 
-           <!-- <canvas id="TrafficChart"></canvas>   -->
-           <div id="traffic-chart-1" class="traffic-chart"></div>
+           <div id="chartContainer-1" style="height: 300px; width: 100%;"></div>
          </div>
        </div>
 
-       <div class="col-lg-6">
+       <div class="col-lg-12">
          <div class="card-header">Cảm biến 2</div>
          <div class="card-body"> 
            <!-- <canvas id="TrafficChart"></canvas>   -->
-           <div id="traffic-chart-2" class="traffic-chart"></div>
+           <div id="chartContainer-2" style="height: 300px; width: 100%;"></div>
          </div>
        </div>
 
-       <div class="col-lg-6">
+       <div class="col-lg-12">
          <div class="card-header">Cảm biến 3</div>
          <div class="card-body"> 
            <!-- <canvas id="TrafficChart"></canvas>   -->
-           <div id="traffic-chart-3" class="traffic-chart"></div>
+           <div id="chartContainer-3" style="height: 300px; width: 100%;"></div>
          </div>
        </div>
 
-       <div class="col-lg-6">
+       <div class="col-lg-12">
          <div class="card-header">Cảm biến 4</div>
          <div class="card-body"> 
            <!-- <canvas id="TrafficChart"></canvas>   -->
-           <div id="traffic-chart-4" class="traffic-chart"></div>
+           <h1 style="text-align: center; color: gray">NOT FOUND</h1>
          </div>
        </div>
      </div> <!-- /.row --> 
@@ -65,134 +64,183 @@
 
 
 
-<div class="clearfix"></div>
-<div class="orders">
- <div class="row">
-   <div class="col-xl-8"> 
-     <div class="card">
-       <div class="card-body">
-         <h4 class="box-title">Cập nhật gần đây nhất </h4>
-       </div>
-       <div class="card-body--">
-         <div class="table-stats order-table ov-h">
-            @if(isset($last_data))
-           <table class="table ">
-             <thead>
-               <tr>
-                 <th>Cảm biến</th>
-                 <th>{{$last_data[4]->created_at}}</th>
-                 <th>{{$last_data[3]->created_at}}</th>
-                 <th>{{$last_data[2]->created_at}}</th>
-                 <th>{{$last_data[1]->created_at}}</th>
-                 <th>{{$last_data[0]->created_at}}</th>
-                 <th>Đơn vị</th>
-               </tr>
-             </thead>
-             <tbody> 
-               <tr class=" pb-0">
-                <td class="number">1</td>
-                @foreach($last_data as $value)
-                 <td class="number">{{$value->ss1}}</td>
-                @endforeach
-                  <td>
-                   <span class="badge badge-complete">C</span>
-                 </td>
-               </tr>
 
-               <tr class=" pb-0">
-                <td class="number">2</td>
-                @foreach($last_data as $value)
-                 <td class="number">{{$value->ss2}}</td>
-                @endforeach
-                  <td>
-                   <span class="badge badge-complete">C</span>
-                 </td>
-               </tr>
 
-               <tr class=" pb-0">
-                <td class="number">3</td>
-                @foreach($last_data as $value)
-                 <td class="number">{{$value->ss3}}</td>
-                @endforeach
-                  <td>
-                   <span class="badge badge-complete">C</span>
-                 </td>
-               </tr>
 
-               <tr class=" pb-0">
-                <td class="number">4</td>
-                @foreach($last_data as $value)
-                 <td class="number">{{$value->ss4}}</td>
-                @endforeach
-                  <td>
-                   <span class="badge badge-complete">C</span>
-                 </td>
-               </tr>
 
-             </tbody>
-           </table>
-           @endif
-         </div> <!-- /.table-stats -->
-       </div>
-     </div> <!-- /.card -->
-   </div>
+<script type="text/javascript">
+function dothi() {
 
-   <div class="col-xl-4"> 
-     <div class="card">
-       <div class="card-body">
-         <h4 class="box-title">Giá trị trung bình  </h4>
-       </div>
-       <div class="card-body--">
-         <div class="table-stats order-table ov-h">
-          @if(isset($data_avg))
-           <table class="table ">
-             <thead>
-               <tr>
-                 <th>SS</th>
-                 <th>Today</th>
-                 <th>1</th>
-                 <th>2</th>
-                 <th style="text-align: left;">3</th>
-               </tr>
-             </thead>
-             <tbody> 
-               <tr class=" pb-0">
-                <td class="number">1</td>
-                @foreach($data_avg as $value)
-                 <td class="number">{{$value->ss1}}</td>
-                @endforeach
-                
-               </tr>
+var chart = new CanvasJS.Chart("chartContainer-1", {
+  animationEnabled: true,
+  title:{
+    text: "Temperature"
+  },
+  toolTip: {
+    shared: true
+  },
 
-               <tr class=" pb-0">
-                <td class="number">2</td>
-                @foreach($data_avg as $value)
-                 <td class="number">{{$value->ss2}}</td>
-                @endforeach
-                
-               </tr>
+  axisX: {
+    title: "Time",
+    suffix : " s"
+  },
+  axisY: {
+    title: "Speed",
+    titleFontColor: "#4F81BC",
+    suffix : " °C",
+    lineColor: "#4F81BC",
+    tickColor: "#4F81BC"
+  },
+  axisY2: {
+    title: "Distance",
+    titleFontColor: "#C0504E",
+    suffix : " m",
+    lineColor: "#C0504E",
+    tickColor: "#C0504E"
+  },
+  data: [{
+    type: "spline",
+    name: "Station 1",
+    xValueFormatString: "'Day:'DD h'h'm'm's's'",
+    yValueFormatString: "#,##0.00 °C",
+    dataPoints: data_ss11
+  },
+  {
+    type: "spline",  
+    name: "Station 2",
+    xValueFormatString: "'Day:'DD h'h'm'm's's'",
+    yValueFormatString: "#,##0.00 °C",
+    dataPoints: data_ss12
+  }]
+});
 
-               <tr class=" pb-0">
-                <td class="number">3</td>
-                @foreach($data_avg as $value)
-                 <td class="number">{{$value->ss3}}</td>
-                @endforeach
-                  
-               </tr>
+var chart2 = new CanvasJS.Chart("chartContainer-2", {
+  animationEnabled: true,
+  title:{
+    text: "Humidity"
+  },
+  toolTip: {
+    shared: true
+  },
+  axisX: {
+    title: "Time",
+    suffix : " s"
+  },
+  axisY: {
+    title: "Speed",
+    titleFontColor: "#4F81BC",
+    suffix : " %",
+    lineColor: "#4F81BC",
+    tickColor: "#4F81BC"
+  },
+  axisY2: {
+    title: "Distance",
+    titleFontColor: "#C0504E",
+    suffix : " m",
+    lineColor: "#C0504E",
+    tickColor: "#C0504E"
+  },
+  data: [{
+    type: "spline",
+    name: "Station 1",
+    xValueFormatString: "'Day:'DD h'h'm'm's's'",
+    yValueFormatString: "#,##0.00 %",
+    dataPoints: data_ss21
+  },
+  {
+    type: "spline",  
+    name: "Station 2",
+    xValueFormatString: "'Day:'DD h'h'm'm's's'",
+    yValueFormatString: "#,##0.00 %",
+    dataPoints: data_ss22
+  }]
+});
 
-               <tr class=" pb-0"> 
-                <td class="number">4</td>
-                @foreach($data_avg as $value)
-                 <td class="number">{{$value->ss4}}</td>
-                @endforeach
-               </tr>
+var chart3 = new CanvasJS.Chart("chartContainer-3", {
+  animationEnabled: true,
+  title:{
+    text: "Humidity"
+  },
+  toolTip: {
+    shared: true
+  },
+  axisX: {
+    title: "Time",
+    suffix : " s"
+  },
+  axisY: {
+    title: "Speed",
+    titleFontColor: "#4F81BC",
+    suffix : " %",
+    lineColor: "#4F81BC",
+    tickColor: "#4F81BC"
+  },
+  axisY2: {
+    title: "Distance",
+    titleFontColor: "#C0504E",
+    suffix : " m",
+    lineColor: "#C0504E",
+    tickColor: "#C0504E"
+  },
+  data: [{
+    type: "spline",
+    name: "Station 1",
+    xValueFormatString: "'Day:'DD h'h'm'm's's'",
+    yValueFormatString: "#,##0.00 %",
+    dataPoints: data_ss31
+  },
+  {
+    type: "spline",  
+    name: "Station 2",
+    xValueFormatString: "'Day:'DD h'h'm'm's's'",
+    yValueFormatString: "#,##0.00 %",
+    dataPoints: data_ss32
+  }]
+});
 
-             </tbody>
-           </table>
-          @endif
-         </div> <!-- /.table-stats -->
-       </div>
-     </div> <!-- /.card -->
-   </div>
-</div> 
-</div>
+chart.render();
+chart2.render();
+chart3.render();
+}
+</script>
+
+<script type="text/javascript">
+  function () {
+     var chart = new CanvasJS.Chart("chartContainerSali", {
+     theme: co,
+     animationEnabled: true,
+     title:{
+     text: "Graph of Salinity"
+     },
+     axisY :{
+     includeZero: false,
+     title: "salinity (ppm)",
+     suffix: ""
+     },
+     toolTip: {
+     shared: "true"
+     },
+     legend:{
+     cursor:"pointer",
+     itemclick : toggleDataSeries
+     },
+     data: [{
+     type: "spline",
+     visible: true,
+     showInLegend: true,
+     yValueFormatString: "##.0 ppm",
+     name: "Salinity",
+     dataPoints: dataSali,
+     },]
+     });
+     chart.render();
+     function toggleDataSeries(e) {
+     if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+     e.dataSeries.visible = false;
+     } else {
+     e.dataSeries.visible = true;
+     }
+     chart.render();
+     } 
+
+</script>
