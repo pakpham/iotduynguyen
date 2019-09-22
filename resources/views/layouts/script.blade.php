@@ -132,12 +132,12 @@
         // DATA SENSOR OF CHART 1 (SENSOR 1)
         for (var i = 0; i <data1.length; i++) {
           data_ss11[i] = {
-            x: sapxepNgay(data1[i].created_at), y: data1[i].ss1
+            x: sapxepNgay(data1[i].created_at), y: Number(data1[i].ss1)
           } 
         };
         for (var i = 0; i <data2.length; i++) {
           data_ss12[i] = {
-            x: sapxepNgay(data2[i].created_at), y: data2[i].ss1
+            x: sapxepNgay(data2[i].created_at), y: Number(data2[i].ss1)
           } 
         }; 
 
