@@ -5,7 +5,7 @@
      <div class="card-body">
       <h4 class="box-title">Biểu đồ dữ liệu trong ngày </h4>
      </div>
-       <div class="row">
+       <div class="row container">
           <div class="col-lg-8">
             <form method="get" action="query-data" id="form-query-data">
               <div class="row">
@@ -64,16 +64,6 @@
 </div>
 
 
-<div class="container">
-  <div class="card">
-         <div class="card-header">Cảm biến 1</div>
-         <div class="card-body"> 
-           <div id="chartContainer" style="height: 100%; width: 100%;"></div>
-         </div>
-    
-  </div>
-</div>
-
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>  
 <script type="text/javascript">
@@ -85,246 +75,155 @@ var data_temp = [
       { x: new Date(2019, 9, 2,1,6,3), y: 73 },
       { x: new Date(2019, 9, 2,1,7,3), y: 96 },
       { x: new Date(2019, 9, 2,1,8,3), y: 84 },
-      { x: new Date(2019, 9, 2,1,9,3), y: 83 },
-      { x: new Date(2019, 9, 2,1,10,3), y: 69 },
-      { x: new Date(2019, 9, 2,1,12,3), y: 43 },
-      { x: new Date(2019, 9, 2,1,13,3), y: 70 },
-      { x: new Date(2019, 9, 2,1,14,3), y: 69 },
-      { x: new Date(2019, 9, 2,1,15,3), y: 90 },
-      { x: new Date(2019, 9, 2,1,16,3), y: 30 }];
-
-function dothi1() {
-var chart = new CanvasJS.Chart("chartContainer-1", {
-  animationEnabled: true,
-  title:{
-    text: "Temperature"
-  },
-  toolTip: {
-    shared: true
-  },
-
-  axisX: {
-    title: "Time",
-    suffix : " s"
-  },
-  axisY: {
-    title: "Temperature",
-    titleFontColor: "#4F81BC",
-    suffix : " °C",
-    lineColor: "#4F81BC",
-    tickColor: "#4F81BC"
-  },
-  axisY2: {
-    title: "Distance",
-    titleFontColor: "#C0504E",
-    suffix : " m",
-    lineColor: "#C0504E",
-    tickColor: "#C0504E"
-  },
-  data: [{
-    type: "spline",
-    name: "Station 1",
-    xValueFormatString: "'Day:'DD h'h'm'm's's'",
-    yValueFormatString: "#,## °C",
-    dataPoints: data_ss11
-  },
-  {
-    type: "spline",  
-    name: "Station 2",
-    xValueFormatString: "'Day:'DD h'h'm'm's's'",
-    yValueFormatString: "#,##0.00 °C",
-    dataPoints: data_ss12
-  }]
-});
-
-var chart2 = new CanvasJS.Chart("chartContainer-2", {
-  animationEnabled: true,
-  title:{
-    text: "Humidity"
-  },
-  toolTip: {
-    shared: true
-  },
-  axisX: {
-    title: "Time",
-    suffix : " s"
-  },
-  axisY: {
-    title: "Speed",
-    titleFontColor: "#4F81BC",
-    suffix : " %",
-    lineColor: "#4F81BC",
-    tickColor: "#4F81BC"
-  },
-  axisY2: {
-    title: "Distance",
-    titleFontColor: "#C0504E",
-    suffix : " m",
-    lineColor: "#C0504E",
-    tickColor: "#C0504E"
-  },
-  data: [{
-    type: "spline",
-    name: "Station 1",
-    xValueFormatString: "'Day:'DD h'h'm'm's's'",
-    yValueFormatString: "#,##0.00 %",
-    dataPoints: data_ss21
-  },
-  {
-    type: "spline",  
-    name: "Station 2",
-    xValueFormatString: "'Day:'DD h'h'm'm's's'",
-    yValueFormatString: "#,##0.00 %",
-    dataPoints: data_ss22
-  }]
-});
-
-var chart3 = new CanvasJS.Chart("chartContainer-3", {
-  animationEnabled: true,
-  title:{
-    text: "Humidity"
-  },
-  toolTip: {
-    shared: true
-  },
-  axisX: {
-    title: "Time",
-    suffix : " s"
-  },
-  axisY: {
-    title: "Speed",
-    titleFontColor: "#4F81BC",
-    suffix : " %",
-    lineColor: "#4F81BC",
-    tickColor: "#4F81BC"
-  },
-  axisY2: {
-    title: "Distance",
-    titleFontColor: "#C0504E",
-    suffix : " m",
-    lineColor: "#C0504E",
-    tickColor: "#C0504E"
-  },
-  data: [{
-    type: "spline",
-    name: "Station 1",
-    xValueFormatString: "'Day:'DD h'h'm'm's's'",
-    yValueFormatString: "#,##0.00 %",
-    dataPoints: data_ss31
-  },
-  {
-    type: "spline",  
-    name: "Station 2",
-    xValueFormatString: "'Day:'DD h'h'm'm's's'",
-    yValueFormatString: "#,##0.00 %",
-    dataPoints: data_ss32
-  }]
-});
-
-chart.render();
-chart2.render();
-chart3.render();
-}
+      { x: new Date(2019, 9, 2,1,2,3), y: 83 },
+      { x: new Date(2019, 9, 2,1,2,3), y: 69 },
+      { x: new Date(2019, 9, 2,1,2,3), y: 43 },
+      { x: new Date(2019, 9, 2,1,2,3), y: 70 },
+      { x: new Date(2019, 9, 2,1,2,3), y: 69 },
+      { x: new Date(2019, 9, 2,1,2,3), y: 90 },
+      { x: new Date(2019, 9, 2,1,2,3), y: 30 }];
 </script>
 
 
-
-<script type="text/javascript">
-function dothi2() {
- var chart = new CanvasJS.Chart("chartContainer-temp", {
-   theme: 'light2',
-   animationEnabled: true,
-   title:{
-   text: "Graph of Salinity"
-   },
-   axisY :{
-   includeZero: false,
-   title: "salinity (ppm)",
-   suffix: ""
-   },
-   toolTip: {
-   shared: "true"
-   },
-   legend:{
-   cursor:"pointer",
-   itemclick : toggleDataSeries
-   },
-   data: [{
-   type: "spline",
-   visible: true,
-   showInLegend: true,
-   yValueFormatString: "##.0 ppm",
-   name: "Salinity",
-   dataPoints: data_ss11,
-   },
-   {
-   type: "spline",
-   visible: true,
-   showInLegend: true,
-   yValueFormatString: "##.0 ppm",
-   name: "Salinity",
-   dataPoints: data_ss12,
-   }]
- });
- chart.render();
- function toggleDataSeries(e) {
-   if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
-   e.dataSeries.visible = false;
-   } else {
-   e.dataSeries.visible = true;
-   }
-   chart.render();
- } 
- }
-</script>
 
 <script>
 function dothi() {
 
-var chart = new CanvasJS.Chart("chartContainer", {
+var chart1 = new CanvasJS.Chart("chartContainer-1", {
   theme:"light2",
   animationEnabled: true,
   title:{
-    text: "Graegtadsjaef sfgsd f9rksf aka"
+    text: "Temperature - Sensor 1"
   },
   axisY :{
     includeZero: false,
-    title: "Number of Viewers",
-    suffix: "mn"
+    title: "Temperature",
+    suffix: " °C "
   },
   toolTip: {
     shared: "true"
   },
   legend:{
     cursor:"pointer",
-    itemclick : toggleDataSeries
+    itemclick : toggleDataSeries1
   },
   data: [{
     type: "spline",
-    visible: false,
+    visible: true,
     showInLegend: true,
-    yValueFormatString: "##.00mn",
+    yValueFormatString: "## °C",
     name: "Season 1",
     dataPoints: data_ss11
   },
   {
     type: "spline", 
     showInLegend: true,
-    visible: false,
-    yValueFormatString: "##.00mn",
+    visible: true,
+    yValueFormatString: "## °C",
     name: "Season 2",
-    dataPoints: data_temp
+    dataPoints: data_ss12
   }]  
 });
-chart.render();
-
-function toggleDataSeries(e) {
+chart1.render();
+function toggleDataSeries1(e) {
   if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
     e.dataSeries.visible = false;
   } else {
     e.dataSeries.visible = true;
   }
-  chart.render();
+  chart1.render();
+}
+
+
+
+var chart2 = new CanvasJS.Chart("chartContainer-2", {
+  theme:"light2",
+  animationEnabled: true,
+  title:{
+    text: "Humidity - Sensor 2"
+  },
+  axisY :{
+    includeZero: false,
+    title: "Humidity",
+    suffix: " %"
+  },
+  toolTip: {
+    shared: "true"
+  },
+  legend:{
+    cursor:"pointer",
+    itemclick : toggleDataSeries2
+  },
+  data: [{
+    type: "spline",
+    visible: true,
+    showInLegend: true,
+    yValueFormatString: "##,00 %",
+    name: "Season 1",
+    dataPoints: data_ss21
+  },
+  {
+    type: "spline", 
+    showInLegend: true,
+    visible: true,
+    yValueFormatString: "##,00 %",
+    name: "Season 2",
+    dataPoints: data_ss22
+  }]  
+});
+chart2.render();
+function toggleDataSeries2(e) {
+  if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+    e.dataSeries.visible = false;
+  } else {
+    e.dataSeries.visible = true;
+  }
+  chart2.render();
+}
+
+var chart3 = new CanvasJS.Chart("chartContainer-3", {
+  theme:"light2",
+  animationEnabled: true,
+  title:{
+    text: "Humidity - Sensor 3"
+  },
+  axisY :{
+    includeZero: false,
+    title: "Humidity",
+    suffix: " %"
+  },
+  toolTip: {
+    shared: "true"
+  },
+  legend:{
+    cursor:"pointer",
+    itemclick : toggleDataSeries3
+  },
+  data: [{
+    type: "spline",
+    visible: true,
+    showInLegend: true,
+    yValueFormatString: "##,00 %",
+    name: "Season 1",
+    dataPoints: data_ss31
+  },
+  {
+    type: "spline", 
+    showInLegend: true,
+    visible: true,
+    yValueFormatString: "##,00 %",
+    name: "Season 2",
+    dataPoints: data_ss32
+  }]  
+});
+chart3.render();
+function toggleDataSeries3(e) {
+  if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+    e.dataSeries.visible = false;
+  } else {
+    e.dataSeries.visible = true;
+  }
+  chart3.render();
 }
 
 }
