@@ -66,8 +66,6 @@
 
 
 
-
-
 <script type="text/javascript">
 function dothi() {
 
