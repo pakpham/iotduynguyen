@@ -1,5 +1,6 @@
 <div class="card">
   <div class="card-header">
+    <h3>TRẠM 1</h3><hr> 
     <h5><b>Dữ liệu gần nhất: </b> <b style="color: red" id="created-at">
       @if(isset($last_data[0]->ss1))
                 {{$last_data[0]->created_at}}
@@ -104,6 +105,7 @@
 
 <div class="card">
   <div class="card-header">
+     <h3>TRẠM 2</h3><hr>
     <h5><b>Dữ liệu gần nhất: </b> <b style="color: red" id="created-at-2">
       @if(isset($last_data_2[0]->ss1))
                 {{$last_data_2[0]->created_at}}
