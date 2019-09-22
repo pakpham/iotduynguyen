@@ -79,19 +79,19 @@
 <script type="text/javascript">
 var data_temp = [
       { x: new Date(2019, 9, 2,1,2,3), y: 60 },
-      { x: new Date(2019, 9, 2,1,2,3), y: 70 },
-      { x: new Date(2019, 9, 2,1,2,3), y: 71 },
-      { x: new Date(2019, 9, 2,1,2,3), y: 65 },
-      { x: new Date(2019, 9, 2,1,2,3), y: 73 },
-      { x: new Date(2019, 9, 2,1,2,3), y: 96 },
-      { x: new Date(2019, 9, 2,1,2,3), y: 84 },
-      { x: new Date(2019, 9, 20,1,2,3), y: 83 },
-      { x: new Date(2019, 9, 21,1,2,3), y: 69 },
-      { x: new Date(2019, 9, 22,1,2,3), y: 43 },
-      { x: new Date(2019, 9, 23,1,2,3), y: 70 },
-      { x: new Date(2019, 9, 24,1,2,3), y: 69 },
-      { x: new Date(2019, 9, 25,1,2,3), y: 90 },
-      { x: new Date(2019, 9, 26,1,2,3), y: 30 }];
+      { x: new Date(2019, 9, 2,1,3,3), y: 70 },
+      { x: new Date(2019, 9, 2,1,4,3), y: 71 },
+      { x: new Date(2019, 9, 2,1,5,3), y: 65 },
+      { x: new Date(2019, 9, 2,1,6,3), y: 73 },
+      { x: new Date(2019, 9, 2,1,7,3), y: 96 },
+      { x: new Date(2019, 9, 2,1,8,3), y: 84 },
+      { x: new Date(2019, 9, 2,1,9,3), y: 83 },
+      { x: new Date(2019, 9, 2,1,10,3), y: 69 },
+      { x: new Date(2019, 9, 2,1,12,3), y: 43 },
+      { x: new Date(2019, 9, 2,1,13,3), y: 70 },
+      { x: new Date(2019, 9, 2,1,14,3), y: 69 },
+      { x: new Date(2019, 9, 2,1,15,3), y: 90 },
+      { x: new Date(2019, 9, 2,1,16,3), y: 30 }];
 
 function dothi1() {
 var chart = new CanvasJS.Chart("chartContainer-1", {
