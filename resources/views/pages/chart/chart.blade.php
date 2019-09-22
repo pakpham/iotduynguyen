@@ -112,7 +112,7 @@ var chart1 = new CanvasJS.Chart("chartContainer-1", {
     visible: true,
     showInLegend: true,
     yValueFormatString: "## °C",
-    name: "Season 1",
+    name: "Station 1",
     dataPoints: data_ss11
   },
   {
@@ -120,8 +120,16 @@ var chart1 = new CanvasJS.Chart("chartContainer-1", {
     showInLegend: true,
     visible: true,
     yValueFormatString: "## °C",
-    name: "Season 2",
+    name: "Station 2",
     dataPoints: data_ss12
+  },
+  {
+    type: "spline", 
+    showInLegend: true,
+    visible: false,
+    yValueFormatString: "## °C",
+    name: "Station 3",
+    dataPoints: [{x:0,y:0}]
   }]  
 });
 chart1.render();
@@ -159,7 +167,7 @@ var chart2 = new CanvasJS.Chart("chartContainer-2", {
     visible: true,
     showInLegend: true,
     yValueFormatString: "##,00 %",
-    name: "Season 1",
+    name: "Station 1",
     dataPoints: data_ss21
   },
   {
@@ -167,8 +175,16 @@ var chart2 = new CanvasJS.Chart("chartContainer-2", {
     showInLegend: true,
     visible: true,
     yValueFormatString: "##,00 %",
-    name: "Season 2",
+    name: "Station 2",
     dataPoints: data_ss22
+  },
+  {
+    type: "spline", 
+    showInLegend: true,
+    visible: false,
+    yValueFormatString: "##,00 %",
+    name: "Station 3",
+    dataPoints: [{x:0,y:0}]
   }]  
 });
 chart2.render();
@@ -204,7 +220,7 @@ var chart3 = new CanvasJS.Chart("chartContainer-3", {
     visible: true,
     showInLegend: true,
     yValueFormatString: "##,00 %",
-    name: "Season 1",
+    name: "Station 1",
     dataPoints: data_ss31
   },
   {
@@ -212,8 +228,16 @@ var chart3 = new CanvasJS.Chart("chartContainer-3", {
     showInLegend: true,
     visible: true,
     yValueFormatString: "##,00 %",
-    name: "Season 2",
+    name: "Station 2",
     dataPoints: data_ss32
+  },
+  {
+    type: "spline", 
+    showInLegend: true,
+    visible: false,
+    yValueFormatString: "##,00 %",
+    name: "Station 3",
+    dataPoints: [{x:0,y:0}]
   }]  
 });
 chart3.render();
