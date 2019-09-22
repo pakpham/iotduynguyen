@@ -1,3 +1,4 @@
+
 <div class="row">
  <div class="col-lg-12">
    <div class="card">  
@@ -63,7 +64,15 @@
 </div>
 
 
-
+<div class="container">
+  <div class="card">
+         <div class="card-header">Cảm biến 1</div>
+         <div class="card-body"> 
+           <div id="chartContainer" style="height: 100%; width: 100%;"></div>
+         </div>
+    
+  </div>
+</div>
 
 
 <script type="text/javascript">
@@ -205,7 +214,7 @@ chart3.render();
 
 <script type="text/javascript">
 function dothi() {
- var chart = new CanvasJS.Chart("chartContainer-1", {
+ var chart = new CanvasJS.Chart("chartContainer", {
    theme: 'light2',
    animationEnabled: true,
    title:{
