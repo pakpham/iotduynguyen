@@ -201,3 +201,53 @@ chart3.render();
 }
 </script>
 
+
+
+<script type="text/javascript">
+function dothi() {
+ var chart = new CanvasJS.Chart("chartContainer-1", {
+   theme: 'light2',
+   animationEnabled: true,
+   title:{
+   text: "Graph of Salinity"
+   },
+   axisY :{
+   includeZero: false,
+   title: "salinity (ppm)",
+   suffix: ""
+   },
+   toolTip: {
+   shared: "true"
+   },
+   legend:{
+   cursor:"pointer",
+   itemclick : toggleDataSeries
+   },
+   data: [{
+   type: "spline",
+   visible: true,
+   showInLegend: true,
+   yValueFormatString: "##.0 ppm",
+   name: "Salinity",
+   dataPoints: data_ss11,
+   },
+   {
+   type: "spline",
+   visible: true,
+   showInLegend: true,
+   yValueFormatString: "##.0 ppm",
+   name: "Salinity",
+   dataPoints: data_ss12,
+   }]
+ });
+ chart.render();
+ function toggleDataSeries(e) {
+   if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+   e.dataSeries.visible = false;
+   } else {
+   e.dataSeries.visible = true;
+   }
+   chart.render();
+ } 
+ }
+</script>

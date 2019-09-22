@@ -8,7 +8,7 @@
                 <!-- Widgets End -->
 
                <!--  Traffic  -->
-               @include ('pages.chart.chart')
+               @include ('pages.home.chart')
                <!--  Traffic  End -->
 
                <!-- Calender Chart Weather  -->
