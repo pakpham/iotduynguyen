@@ -144,24 +144,24 @@
         // DATA SENSOR OF CHART 2 (SENSOR 2)
         for (var i = 0; i <data1.length; i++) {
           data_ss21[i] = {
-            x: sapxepNgay(data1[i].created_at), y: data1[i].ss2
+            x: sapxepNgay(data1[i].created_at), y: Number(data1[i].ss2)
           } 
         };
         for (var i = 0; i <data2.length; i++) {
           data_ss22[i] = {
-            x: sapxepNgay(data2[i].created_at), y: data2[i].ss2
+            x: sapxepNgay(data2[i].created_at), y: Number(data2[i].ss2)
           } 
         }; 
 
         //DATA SENSOR OF CHART 3 (SENSOR 3)
         for (var i = 0; i <data1.length; i++) {
           data_ss31[i] = {
-            x: sapxepNgay(data1[i].created_at), y: data1[i].ss3
+            x: sapxepNgay(data1[i].created_at), y: Number(data1[i].ss3)
           } 
         };
         for (var i = 0; i <data2.length; i++) {
           data_ss32[i] = {
-            x: sapxepNgay(data2[i].created_at), y: data2[i].ss3
+            x: sapxepNgay(data2[i].created_at), y: Number(data2[i].ss3)
           } 
         }; 
 
