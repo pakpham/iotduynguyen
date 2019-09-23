@@ -237,7 +237,7 @@ var data_temp = [
 <script>
 function dothi() {
 
-var chart1 = new CanvasJS.Chart("chartContainer-1", {
+var chart1 = new CanvasJS.Chart("chartContainer-2", {
   theme:"light2",
   animationEnabled: true,
   title:{
@@ -292,7 +292,7 @@ function toggleDataSeries1(e) {
 
 
 
-var chart2 = new CanvasJS.Chart("chartContainer-2", {
+var chart2 = new CanvasJS.Chart("chartContainer-1", {
   theme:"light2",
   animationEnabled: true,
   title:{
