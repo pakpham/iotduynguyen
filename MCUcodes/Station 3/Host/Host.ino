@@ -71,7 +71,7 @@ void publicData(){
   sapxepData();
   http.begin(client,url);      
   int httpCode = http.GET();
-  String payload = http.getString();    //Get the response payload
+  //String payload = http.getString();   
   Serial.print("URL SERVER: ");
   Serial.println(url);
   Serial.println("PUSH DATA DONE");

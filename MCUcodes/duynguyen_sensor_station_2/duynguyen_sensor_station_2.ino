@@ -1,13 +1,7 @@
-/**
-   Authorization.ino
-
-    Created on: 09.12.2015
-
-*/
 
 #include <Arduino.h>
 #include <SHT1x.h>
-#include <ESP8266WiFi.h>
+//#include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
@@ -27,22 +21,22 @@ unsigned char data4 = 0;
 String data = "";
 String url = "http://iotduynguyen.cf/public/add-data/";
 /////////////////////////////
-void setupWifi();
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   pinMode(LED_BUILTIN, OUTPUT);
   // Serial.setDebugOutput(true);
   pinMode(SS1_PIN, INPUT);
   setupWifi();
 }
 void setupWifi() {
-  for (uint8_t t = 4; t > 0; t--) {
-    delay(300);
-  }
   WiFi.mode(WIFI_STA);
   WiFiMulti.addAP("iot1", "kkkkkkkk");
-  blinkLed(100);
+  while (WiFi.status() != WL_CONNECTED) {
+    blinkLed(100);
+ }
+  blinkLed(50);
+  blinkLed(50);
 }
 
 
@@ -52,36 +46,38 @@ void loop() {
   if ((WiFiMulti.run() == WL_CONNECTED)) {
     WiFiClient client;
     HTTPClient http;
-    Serial.print("[HTTP] begin...\n");
+    //Serial.print("[HTTP] begin...\n");
     // configure traged server and url
     readSensor();
     http.begin(client, "http://192.168.4.1/"+data);
-    Serial.print("[HTTP] GET...\n");
+    //Serial.print("[HTTP] GET...\n");
 
     int httpCode = http.GET();
 
     // httpCode will be negative on error
     if (httpCode > 0) {
       // HTTP header has been send and Server response header has been handled
-      Serial.printf("[HTTP] GET... code: %d\n", httpCode);
+      //Serial.printf("[HTTP] GET... code: %d\n", httpCode);
 
       // file found at server
       if (httpCode == HTTP_CODE_OK) {
         String payload = http.getString();
-        Serial.println(payload);
+        //Serial.println(payload);
       }
     } else {
-      Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
+      //Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
     }
 
     http.end();
+  } else{
+    setupWifi();
   }
 
 
   blinkLed(50);
   blinkLed(50);
   blinkLed(50);
-  delay(10000);
+  delay(60000);
 }
 
 
@@ -111,15 +107,15 @@ void blinkLed(char t) {
   digitalWrite(LED_BUILTIN, HIGH);
   delay(t);
 }
-void readSensorTest(){
-  data1 = random(0,50);
-  data2 = random(0,50);
-  data3 = random(0,50);
-  data4 = random(0,50);
-  //delay(3000);
-  //data = String(data1)+String(data2)+String(data3)+String(data4);
-  data = String(data1) +'/'+ String(data2) +'/'+ String(data3) +'/'+ String(data4);
-}
+//void readSensorTest(){
+//  data1 = random(0,50);
+//  data2 = random(0,50);
+//  data3 = random(0,50);
+//  data4 = random(0,50);
+//  //delay(3000);
+//  //data = String(data1)+String(data2)+String(data3)+String(data4);
+//  data = String(data1) +'/'+ String(data2) +'/'+ String(data3) +'/'+ String(data4);
+//}
 void readSensor(){
   unsigned int ss1 = 0;
   ss1 = analogRead(SS1_PIN);
@@ -129,5 +125,5 @@ void readSensor(){
   Serial.print("DATA SENSOR 1:");
   Serial.println (data2);
   data4 = 0;
-  data = String(data1) + String(data2) + String(data3) + "1";
+  data = String(data1) + String(data2) + String(data3) + "2";
 }
