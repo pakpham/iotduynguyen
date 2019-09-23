@@ -165,7 +165,7 @@
        <div class="col-lg-12">
          <div class="card-header">Cảm biến 1</div>
          <div class="card-body"> 
-           <div id="chartContainer-1" style="height: 300px; width: 100%;"></div>
+           <div id="chartContainer-2" style="height: 300px; width: 100%;"></div>
          </div>
        </div>
 
@@ -173,7 +173,7 @@
          <div class="card-header">Cảm biến 2</div>
          <div class="card-body"> 
            <!-- <canvas id="TrafficChart"></canvas>   -->
-           <div id="chartContainer-2" style="height: 300px; width: 100%;"></div>
+           <div id="chartContainer-1" style="height: 300px; width: 100%;"></div>
          </div>
        </div>
 
