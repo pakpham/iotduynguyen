@@ -165,7 +165,7 @@
        <div class="col-lg-12">
          <div class="card-header">Cảm biến 1</div>
          <div class="card-body"> 
-           <div id="chartContainer-2" style="height: 300px; width: 100%;"></div>
+           <div id="chartContainer-1" style="height: 300px; width: 100%;"></div>
          </div>
        </div>
 
@@ -173,7 +173,7 @@
          <div class="card-header">Cảm biến 2</div>
          <div class="card-body"> 
            <!-- <canvas id="TrafficChart"></canvas>   -->
-           <div id="chartContainer-1" style="height: 300px; width: 100%;"></div>
+           <div id="chartContainer-2" style="height: 300px; width: 100%;"></div>
          </div>
        </div>
 
@@ -237,7 +237,7 @@ var data_temp = [
 <script>
 function dothi() {
 
-var chart1 = new CanvasJS.Chart("chartContainer-2", {
+var chart1 = new CanvasJS.Chart("chartContainer-1", {
   theme:"light2",
   animationEnabled: true,
   title:{
@@ -261,7 +261,7 @@ var chart1 = new CanvasJS.Chart("chartContainer-2", {
     showInLegend: true,
     yValueFormatString: "## °C",
     name: "Station 1",
-    dataPoints: data_ss11
+    dataPoints: data_ss21
   },
   {
     type: "spline", 
@@ -269,7 +269,7 @@ var chart1 = new CanvasJS.Chart("chartContainer-2", {
     visible: true,
     yValueFormatString: "## °C",
     name: "Station 2",
-    dataPoints: data_ss12
+    dataPoints: data_ss22
   },
   {
     type: "spline", 
@@ -292,7 +292,7 @@ function toggleDataSeries1(e) {
 
 
 
-var chart2 = new CanvasJS.Chart("chartContainer-1", {
+var chart2 = new CanvasJS.Chart("chartContainer-2", {
   theme:"light2",
   animationEnabled: true,
   title:{
@@ -316,7 +316,7 @@ var chart2 = new CanvasJS.Chart("chartContainer-1", {
     showInLegend: true,
     yValueFormatString: "##,00 %",
     name: "Station 1",
-    dataPoints: data_ss21
+    dataPoints: data_ss11
   },
   {
     type: "spline", 
@@ -324,7 +324,7 @@ var chart2 = new CanvasJS.Chart("chartContainer-1", {
     visible: true,
     yValueFormatString: "##,00 %",
     name: "Station 2",
-    dataPoints: data_ss22
+    dataPoints: data_ss12
   },
   {
     type: "spline", 
