@@ -25,7 +25,7 @@
                 @endif  
               </span> <span>%</span>
             </div>
-            <div class="stat-heading">Cảm biến 1</div>
+            <div class="stat-heading">Độ ẩm không khí</div>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
             {{$last_data[0]->ss2}}
           @endif</span> <span>°C</span> 
         </div>
-          <div class="stat-heading">Cảm biến 2</div> 
+          <div class="stat-heading">Nhiệt độ không khí</div> 
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
             {{$last_data[0]->ss3}}
           @endif</span> <span>%</span>
         </div>
-          <div class="stat-heading">Cảm biến 3</div>
+          <div class="stat-heading">Độ ẩm đất</div>
         </div>
       </div>
     </div>
@@ -86,8 +86,9 @@
          <div class="text-left dib"> 
            <div class="stat-text"><span class="count" id="value-ss4">@if(isset($last_data[0]->ss4))
             {{$last_data[0]->ss4}}
-          @endif</span></div>
-          <div class="stat-heading">Cảm biến 4</div>
+          @endif</span> <span>°C</span>
+        </div>
+          <div class="stat-heading">Nhiệt độ đất</div>
         </div>
       </div>
     </div>
@@ -130,7 +131,7 @@
                 @endif  
               </span> <span>%</span>
             </div>
-            <div class="stat-heading">Cảm biến 1</div>
+            <div class="stat-heading">Độ ẩm không khí</div>
           </div>
         </div>
       </div>
@@ -151,7 +152,7 @@
             {{$last_data_2[0]->ss2}}
           @endif</span><span>°C</span> 
         </div>
-          <div class="stat-heading">Cảm biến 2</div> 
+          <div class="stat-heading">Nhiệt độ không khí</div> 
         </div>
       </div>
     </div>
@@ -172,7 +173,7 @@
             {{$last_data_2[0]->ss3}}
           @endif</span> <span>%</span>
         </div>
-          <div class="stat-heading">Cảm biến 3</div>
+          <div class="stat-heading">Độ ẩm đất</div>
         </div>
       </div>
     </div>
@@ -191,8 +192,9 @@
          <div class="text-left dib"> 
            <div class="stat-text"><span class="count" id="value-ss4-2">@if(isset($last_data_2[0]->ss4))
             {{$last_data_2[0]->ss4}}
-          @endif</span></div>
-          <div class="stat-heading">Cảm biến 4</div>
+          @endif</span> <span>°C</span>
+        </div>
+          <div class="stat-heading">Nhiệt độ đất</div>
         </div>
       </div>
     </div>
