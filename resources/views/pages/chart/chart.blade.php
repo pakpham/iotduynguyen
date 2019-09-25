@@ -266,18 +266,20 @@ var chart1 = new CanvasJS.Chart("chartContainer-1", {
   {
     type: "spline", 
     showInLegend: true,
-    visible: true,
-    yValueFormatString: "## °C",
-    name: "Station 2",
-    dataPoints: data_ss22
-  },
-  {
-    type: "spline", 
-    showInLegend: true,
     visible: false,
     yValueFormatString: "## °C",
     name: "Station 3",
     dataPoints: [{x:0,y:0}]
+  }
+  ,
+  {
+    type: "spline", 
+    lineDashType: "dash",
+    showInLegend: true,
+    visible: true,
+    yValueFormatString: "## °C",
+    name: "Station 2",
+    dataPoints: data_ss22
   }]  
 });
 chart1.render();
@@ -321,19 +323,20 @@ var chart2 = new CanvasJS.Chart("chartContainer-2", {
   {
     type: "spline", 
     showInLegend: true,
-    visible: true,
-    yValueFormatString: "##,00 %",
-    name: "Station 2",
-    dataPoints: data_ss12
-  },
-  {
-    type: "spline", 
-    showInLegend: true,
     visible: false,
     yValueFormatString: "##,00 %",
     name: "Station 3",
     dataPoints: [{x:0,y:0}]
-  }]  
+  },
+  {
+    type: "spline", 
+    lineDashType: "dash",
+    showInLegend: true,
+    visible: true,
+    yValueFormatString: "##,00 %",
+    name: "Station 2",
+    dataPoints: data_ss12
+  },]  
 });
 chart2.render();
 function toggleDataSeries2(e) {
@@ -374,18 +377,20 @@ var chart3 = new CanvasJS.Chart("chartContainer-3", {
   {
     type: "spline", 
     showInLegend: true,
-    visible: true,
-    yValueFormatString: "##,00 %",
-    name: "Station 2",
-    dataPoints: data_ss32
-  },
-  {
-    type: "spline", 
-    showInLegend: true,
     visible: false,
     yValueFormatString: "##,00 %",
     name: "Station 3",
     dataPoints: [{x:0,y:0}]
+  }
+  ,
+  {
+    type: "spline", 
+    lineDashType: "dash",
+    showInLegend: true,
+    visible: true,
+    yValueFormatString: "##,00 %",
+    name: "Station 2",
+    dataPoints: data_ss32
   }]  
 });
 chart3.render();
