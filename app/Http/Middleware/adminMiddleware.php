@@ -16,10 +16,9 @@ class adminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check()) {
-            return $next($request);
+        if(\Session::has('locale')){
+           \App::setlocale(\Session::get('locale'));
         }
-        else 
-            return redirect('/dangnhap');
+        return $next($request);
     }
 }

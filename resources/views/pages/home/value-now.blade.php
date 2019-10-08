@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
-    <h3>TRẠM 1</h3><hr> 
-    <h5><b>Dữ liệu gần nhất: </b> <b style="color: red" id="created-at">
+    <h3>{{trans('home.tram1')}}</h3><hr> 
+    <h5><b>{{trans('home.dulieugannhat')}}: </b> <b style="color: red" id="created-at">
       @if(isset($last_data[0]->ss1))
                 {{$last_data[0]->created_at}}
       @endif
@@ -25,7 +25,7 @@
                 @endif  
               </span> <span>%</span>
             </div>
-            <div class="stat-heading">Độ ẩm không khí</div>
+            <div class="stat-heading">{{trans('home.doamkhongkhi')}}</div>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
             {{$last_data[0]->ss2}}
           @endif</span> <span>°C</span> 
         </div>
-          <div class="stat-heading">Nhiệt độ không khí</div> 
+          <div class="stat-heading">{{trans('home.nhietdokhongkhi')}}</div> 
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
             {{$last_data[0]->ss3}}
           @endif</span> <span>%</span>
         </div>
-          <div class="stat-heading">Độ ẩm đất</div>
+          <div class="stat-heading">{{trans('home.doamdat')}}</div>
         </div>
       </div>
     </div>
@@ -88,7 +88,7 @@
             {{$last_data[0]->ss4}}
           @endif</span> <span>°C</span>
         </div>
-          <div class="stat-heading">Nhiệt độ đất</div>
+          <div class="stat-heading">{{trans('home.nhietdodat')}}</div>
         </div>
       </div>
     </div>
@@ -106,8 +106,8 @@
 
 <div class="card">
   <div class="card-header">
-     <h3>TRẠM 2</h3><hr>
-    <h5><b>Dữ liệu gần nhất: </b> <b style="color: red" id="created-at-2">
+     <h3>{{trans('home.tram2')}}</h3><hr>
+    <h5><b>{{trans('home.dulieugannhat')}}: </b> <b style="color: red" id="created-at-2">
       @if(isset($last_data_2[0]->ss1))
                 {{$last_data_2[0]->created_at}}
       @endif
@@ -131,7 +131,7 @@
                 @endif  
               </span> <span>%</span>
             </div>
-            <div class="stat-heading">Độ ẩm không khí</div>
+            <div class="stat-heading">{{trans('home.doamkhongkhi')}}</div>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@
             {{$last_data_2[0]->ss2}}
           @endif</span><span>°C</span> 
         </div>
-          <div class="stat-heading">Nhiệt độ không khí</div> 
+          <div class="stat-heading">{{trans('home.nhietdokhongkhi')}}</div> 
         </div>
       </div>
     </div>
@@ -173,7 +173,7 @@
             {{$last_data_2[0]->ss3}}
           @endif</span> <span>%</span>
         </div>
-          <div class="stat-heading">Độ ẩm đất</div>
+          <div class="stat-heading">{{trans('home.doamdat')}}</div>
         </div>
       </div>
     </div>
@@ -194,7 +194,7 @@
             {{$last_data_2[0]->ss4}}
           @endif</span> <span>°C</span>
         </div>
-          <div class="stat-heading">Nhiệt độ đất</div>
+          <div class="stat-heading">{{trans('home.nhietdodat')}}</div>
         </div>
       </div>
     </div>

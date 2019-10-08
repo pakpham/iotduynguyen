@@ -13,7 +13,7 @@ class DataSensor extends Migration
      */
     public function up()
     {
-        Schema::create('data_sensor', function (Blueprint $table) {
+        Schema::create('data_sensor', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('ss1');
             $table->integer('ss2');

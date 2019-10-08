@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang=""> <!--<![endif]-->
+<html class="no-js" lang=""  lang="{{ app()->getLocale() }}"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,12 +27,11 @@
 </head>
 <body class="bg-dark">
 
-
     <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="card">
-                    <div class="card-header"><h1 style="text-align: center;">NGHIÊN CỨU VÀ THIẾT KẾ BỘ CẢM BIẾN IOT CHO HOẠT ĐỘNG TRỒNG VƯỜN</h1></div>
-                    <div class="card-body" style="text-align: center;"> Nguyễn Huỳnh Anh Duy - Khoa Công Nghệ - Đại học Cần Thơ</div>
+                    <div class="card-header"><h1 style="text-align: center;">{{trans('auth.tieude')}}</h1></div>
+                    <div class="card-body" style="text-align: center;">{{trans('auth.tacgia')}}</div>
             </div>
             <div class="login-content">
                 
@@ -42,6 +41,25 @@
                     </a>
                 </div>
                 <div class="login-form">
+                    <div class="fa fa-language">
+                        <input id="lang" type="hidden" name="" value="{{trans('auth.ngonngu')}}">
+                        <a  id="en" href="{{ url('locale/en') }}" ><i></i> English</a>    <span>|</span>
+                        <a id="vi" href="{{ url('locale/vi') }}" ><i></i> Vietnam</a>
+                        <script type="text/javascript">
+                            var lang = document.getElementById('lang').value;
+                            if (lang == "English") {
+                                document.getElementById('en').classList.add('text-primary');
+                            } if (lang == "Vietnam") {
+                                document.getElementById('vi').classList.add('text-primary');
+                            }
+                        </script>
+                    </div>
+                   <!--  <div>
+                            <a href="change-language/en">English</a>
+                            <span>|</span>
+                            <a href="change-language/vi">Vietnam</a>
+                    </div>
+ -->                    <hr>
                     <form method="POST" action="{{route('login')}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">

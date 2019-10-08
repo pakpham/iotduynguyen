@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/zalo', 'pakController@testZalo');
+Route::get('zalo-logined','pakController@sendMesengerZalo');
 
 Route::get('/pusher', function() {
     event(new App\Events\PusherEvent("UPDATE RealTime Controller using Pusher API "));
@@ -82,11 +84,9 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function(){
 	Route::get('/chart', function(){
 		return view ('pages.chart');
 	});
-
 	Route::get('test', function(){
 		return view ('pages.test1');
 	});
-
 	Route::get('export-data/{date_state}/{date_end}', 'pakController@export')->name('export');
 	Route::get('importExportView', 'pakController@importExportView');
 	Route::post('import', 'pakController@import')->name('import');
@@ -97,3 +97,13 @@ Route::group(['prefix'=>'ajax'], function(){
 	Route::post('getloaitin','ajaxController@getLoaitin')->name('getloaitin');
 });
 
+// Route::get('change-language/{language}', 'pakController@changeLanguage')->name('user.change-language');
+
+// Route::group(['middleware' => 'locale'], function() {
+//     Route::get('change-language/{language}', 'pakController@changeLanguage')
+//         ->name('user.change-language');
+// });
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});

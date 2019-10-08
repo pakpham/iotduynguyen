@@ -9,7 +9,23 @@
             <div class="top-right"> 
                 <div class="header-menu"> 
                     <div class="header-left">
-                        <button class=""><a class="fa" href="{{route('logout')}}">ĐĂNG XUẤT</a></button>
+
+                        <div class="fa fa-language ">
+                            <input id="lang" type="hidden" name="" value="{{trans('auth.ngonngu')}}">
+                            <a  id="en" href="{{ url('locale/en') }}" ><i></i> English</a>    <span>|</span>
+                            <a id="vi" href="{{ url('locale/vi') }}" ><i></i> Vietnam</a>
+                            <script type="text/javascript">
+                                var lang = document.getElementById('lang').value;
+                                if (lang == "English") {
+                                    document.getElementById('en').classList.add('text-primary');
+                                } if (lang == "Vietnam") {
+                                    document.getElementById('vi').classList.add('text-primary');
+                                }
+                            </script>
+                        </div>
+
+
+                        <button class=""><a class="fa" href="{{route('logout')}}">{{trans('layout.dangxuat')}}</a></button>
                         <div class="form-inline">
                             <form class="search-form">
                                 <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">

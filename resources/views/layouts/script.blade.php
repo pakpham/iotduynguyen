@@ -28,10 +28,7 @@
                     'id': 1
                 },
                 success: function(data){
-                    //var getData = $.parseJSON(data);
-                    //console.log(data[0].ss1);
                     var i = 0, data_temp = [];
-                    
                     forEach(data, function(value){
                         data_ss1[i] = value.ss1;
                         data_ss2[i] = value.ss2;
@@ -114,6 +111,8 @@
               document.getElementById("down-data").classList.remove("disabled");
            }
         });
+
+        
       }
 
       function sapxepDulieu(dulieu){

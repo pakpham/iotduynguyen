@@ -6,7 +6,7 @@
    <div class="col-xl-8"> 
      <div class="card">
        <div class="card-body">
-         <h4 class="box-title">Cập nhật gần đây nhất </h4>
+         <h4 class="box-title">{{trans('home.dulieugannhat')}} </h4>
        </div>
        <div class="card-body--">
          <div class="table-stats order-table ov-h">

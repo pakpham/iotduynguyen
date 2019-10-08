@@ -6,7 +6,7 @@
    <div class="col-xl-8"> 
      <div class="card">
        <div class="card-body">
-         <h4 class="box-title">Cập nhật gần đây nhất </h4>
+         <h4 class="box-title">{{trans('home.capnhatgandaynhat')}}</h4>
        </div>
        <div class="card-body--">
          <div class="table-stats order-table ov-h">
@@ -75,7 +75,7 @@
    <div class="col-xl-4"> 
      <div class="card">
        <div class="card-body">
-         <h4 class="box-title">Giá trị trung bình  </h4>
+         <h4 class="box-title">{{trans('home.giatritrungbinh')}} </h4>
        </div>
        <div class="card-body--">
          <div class="table-stats order-table ov-h">
@@ -138,7 +138,7 @@
  <div class="col-lg-12">
    <div class="card">  
      <div class="card-body">
-      <h4 class="box-title">BIỂU ĐỒ DỮ LIỆU </h4>
+      <h4 class="box-title">{{trans('home.bieudodulieu')}} </h4>
      </div>
        <div class="row container">
           <div class="col-lg-8">
@@ -163,14 +163,14 @@
       <hr>
      <div class="row"> 
        <div class="col-lg-12">
-         <div class="card-header">Cảm biến 1</div>
+         <div class="card-header">{{trans('home.cambien1')}}</div>
          <div class="card-body"> 
            <div id="chartContainer-1" style="height: 300px; width: 100%;"></div>
          </div>
        </div>
 
        <div class="col-lg-12">
-         <div class="card-header">Cảm biến 2</div>
+         <div class="card-header">{{trans('home.cambien2')}}</div>
          <div class="card-body"> 
            <!-- <canvas id="TrafficChart"></canvas>   -->
            <div id="chartContainer-2" style="height: 300px; width: 100%;"></div>
@@ -178,7 +178,7 @@
        </div>
 
        <div class="col-lg-12">
-         <div class="card-header">Cảm biến 3</div>
+         <div class="card-header">{{trans('home.cambien3')}}</div>
          <div class="card-body"> 
            <!-- <canvas id="TrafficChart"></canvas>   -->
            <div id="chartContainer-3" style="height: 300px; width: 100%;"></div>
@@ -186,7 +186,7 @@
        </div>
 
        <div class="col-lg-12">
-         <div class="card-header">Cảm biến 4</div>
+         <div class="card-header">{{trans('home.cambien4')}}</div>
          <div class="card-body"> 
            <!-- <canvas id="TrafficChart"></canvas>   -->
            <h1 style="text-align: center; color: gray">NOT FOUND</h1>
