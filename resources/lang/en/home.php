@@ -31,6 +31,10 @@ return [
     'doamdat'   => 'Soil Moisture',
     'nhietdodat'    => 'Soil Temperature',
 
+    'docao' => 'Altitude',
+    'nhietdo' => 'Temperature',
+    'apsuat'    => 'Air Pressure',
+
     'dulieugannhat' => 'Newest Data',
     'capnhatgandaynhat' =>'Updated Data',
     'giatritrungbinh'   =>'Average Data',

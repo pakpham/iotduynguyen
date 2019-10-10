@@ -30,6 +30,10 @@ return [
     'doamdat'   => 'Độ ẩm đất',
     'nhietdodat'    => 'Nhiệt độ đất',
 
+    'docao' => 'Độ cao',
+    'nhietdo' => 'Nhiệt độ',
+    'apsuat'    => 'Áp suất không khí',
+
     'dulieugannhat' =>'Dữ liệu gần nhất',
     'capnhatgandaynhat' => 'Dữ liệu gần đây nhất',
     'giatritrungbinh'   => 'Giá trị trung bình',
