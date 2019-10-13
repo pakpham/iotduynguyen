@@ -45,9 +45,13 @@ Route::get('/test/', 'pakController@getTest');
 Route::post ('get-data-home', 'pakController@getDataHome')->name('get-data-home');
 Route::post('post-test', 'pakController@addDataSensor')->name('post-test');
 Route::get('add-user/{name}/{pass}', 'pakController@addUser');
-Route::get('add-data/{data1}/{data2}/{data3}/{data4}', 'pakController@addDataSensor');
 
-Route::get('add-data-2/{data1}/{data2}/{data3}/{data4}', 'pakController@addDataSensor2');
+
+
+Route::get('add-data/{data1}/{data2}/{data3}/{data4}', 'addDataSensor@addDataSensor');
+Route::get('add-data-2/{data1}/{data2}/{data3}/{data4}', 'addDataSensor@addDataSensor2');
+Route::get('add-data-3/{data1}/{data2}/{data3}/{data4}', 'addDataSensor@addDataSensor3');
+Route::get('add-data-4/{data1}/{data2}/{data3}/{data4}', 'addDataSensor@addDataSensor4');
 
 
 
@@ -72,7 +76,7 @@ Route::post('login','User@handlingLogin')->name('login');
 // PHAN QUYEN TRUY CAP
 Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function(){
 	Route::get('dangxuat', 'User@logout')->name('logout');
-	Route::get('/home', 'pakController@getHome')->name('home-admin');
+	Route::get('/home', 'homeController@getHome')->name('home-admin');
 	Route::get('/get-test', 'pakController@getTest');
 	Route::get('/table-ss1', 'TableSensor@getSs1');
 	Route::get('/table-ss2', 'TableSensor@getSs2');

@@ -31,6 +31,7 @@
     <link href="../assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet"> 
 
 
+    <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
     {{-- TIMER PICKER --}}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>

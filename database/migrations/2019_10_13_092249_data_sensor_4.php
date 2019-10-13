@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DataSensor2 extends Migration
+class DataSensor4 extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class DataSensor2 extends Migration
      */
     public function up()
     {
-        Schema::create('data_sensor_2', function (Blueprint $table) {
+         Schema::create('data_sensor_4', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ss1');
             $table->integer('ss2');
@@ -31,6 +31,6 @@ class DataSensor2 extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('data_sensor_2');
+        //
     }
 }
