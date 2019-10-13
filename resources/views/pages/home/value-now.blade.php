@@ -316,7 +316,7 @@
             @if(isset($data_station3->ss4))
               {{$data_station3->ss4}}
             @endif 
-        </span> <span>Pascal</span>
+        </span> <span>Pa</span>
         </div>
           <div class="stat-heading">{{trans('home.apsuat')}}</div>
         </div>
@@ -423,7 +423,7 @@
             @if(isset($data_station4->ss4))
               {{$data_station4->ss4}}
             @endif 
-        </span> <span>Pascal</span>
+        </span> <span>Pa</span>
         </div>
           <div class="stat-heading">{{trans('home.apsuat')}}</div>
         </div>
