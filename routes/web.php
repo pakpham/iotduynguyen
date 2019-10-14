@@ -11,6 +11,11 @@
 |
 */
 
+
+
+
+
+
 Route::get('/zalo', 'pakController@testZalo');
 Route::get('zalo-logined','pakController@sendMesengerZalo');
 
@@ -41,7 +46,7 @@ Route::get('/', function () {
 // Route::get('/chart-1', function(){
 // 	return view ('pages.chart-1');
 // });
-Route::get('/test/', 'pakController@getTest');
+
 Route::post ('get-data-home', 'pakController@getDataHome')->name('get-data-home');
 Route::post('post-test', 'pakController@addDataSensor')->name('post-test');
 Route::get('add-user/{name}/{pass}', 'pakController@addUser');
@@ -95,19 +100,26 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function(){
 	Route::get('importExportView', 'pakController@importExportView');
 	Route::post('import', 'pakController@import')->name('import');
 
+
+	// Setup warning
+	Route::get('/warning-setup', 'warningController@warningSetup');
+	Route::get('/setWarningSSS1', 'warningController@setWarningSSS1');
+	Route::get('/setWarningSSS2', 'warningController@setWarningSSS2');
+	Route::get('/setWarningSSS3', 'warningController@setWarningSSS3');
+	Route::get('/setWarningSSS4', 'warningController@setWarningSSS4');
+	Route::post('/resetWarning', 'warningController@resetWarning');
+
 });
 
-Route::group(['prefix'=>'ajax'], function(){
-	Route::post('getloaitin','ajaxController@getLoaitin')->name('getloaitin');
-});
 
-// Route::get('change-language/{language}', 'pakController@changeLanguage')->name('user.change-language');
 
-// Route::group(['middleware' => 'locale'], function() {
-//     Route::get('change-language/{language}', 'pakController@changeLanguage')
-//         ->name('user.change-language');
-// });
+
 Route::get('locale/{locale}', function ($locale){
     Session::put('locale', $locale);
     return redirect()->back();
 });
+
+
+
+
+Route::get('testt','warningController@test');

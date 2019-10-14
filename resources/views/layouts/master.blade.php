@@ -43,6 +43,10 @@
     <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
 
+    <!-- BOOTSTRAP JS -->
+
+
+
     <style>
     #weatherWidget .currentDesc {
         color: #ffffff!important;
