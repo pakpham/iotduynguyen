@@ -8,7 +8,7 @@
                     <li class="menu-title"></li><!-- /.menu-title -->
                 
                     <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>{{ trans('layout.canhbao') }}</a>
+                        <a href="warning-setup"> <i class="menu-icon ti-email"></i>{{ trans('layout.canhbao') }}</a>
                     </li>
                     <li>
                         <a href="chart"> <i class="menu-icon fa fa-bar-chart"></i>{{ trans('layout.bieudo')}}</a>
