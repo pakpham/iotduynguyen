@@ -93,8 +93,8 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function(){
 	Route::get('/chart', function(){
 		return view ('pages.chart');
 	});
-	Route::get('test', function(){
-		return view ('pages.test1');
+	Route::get('/about', function(){
+		return view ('pages.about');
 	});
 	Route::get('export-data/{date_state}/{date_end}', 'pakController@export')->name('export');
 	Route::get('importExportView', 'pakController@importExportView');

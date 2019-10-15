@@ -16,8 +16,8 @@
 
                     
                     <li class="menu-title">{{trans('layout.thongtin')}}</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>{{ trans('layout.gioithieu')}}</a>
+                    <li>
+                        <a href="about" > <i class="menu-icon fa fa-bar-chart"></i>{{ trans('layout.gioithieu')}}</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
