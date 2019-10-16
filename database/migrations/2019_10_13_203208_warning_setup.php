@@ -24,7 +24,7 @@ class WarningSetup extends Migration
             $table->integer('ss4');
             $table->tinyInteger('ss4_sign')->default(1);
 
-            $table->integer('id_station')->unique(); 
+            $table->integer('id_station'); 
             $table->timestamps();
         });
 

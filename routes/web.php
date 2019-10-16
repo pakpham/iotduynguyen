@@ -12,8 +12,10 @@
 */
 
 
+Route::get('/test-mail','pakController@testMail');
 
-
+Route::get('/fb-ms-api', 'fbController@index');
+Route::post('/fb-ms-api', 'fbController@index');
 
 
 Route::get('/zalo', 'pakController@testZalo');

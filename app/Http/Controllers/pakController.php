@@ -8,11 +8,22 @@ use App\Imports\UsersImport;
 use Maatwebsite\Excel\Facades\Excel;
 use Zalo\Zalo;
 use App;
+use Mail;
 
 
 
 class pakController extends Controller
 {
+
+  //Thu nghiem gui gmail
+  public function testMail(){
+    Mail::send('mail-warning', array('name'=>'name','email'=>'email', 'content'=>'content'),function($message){
+          $message->to('pakpham@gmail.com', 'Khuong')->subject('WARNING');});
+    //Session::flash('flash_message', 'Send message successfully!');
+    return "Done test mail";
+  }
+
+
 
   // Thu nghiem ZALO API
   // ZALO Flatform USNING Zalo API
