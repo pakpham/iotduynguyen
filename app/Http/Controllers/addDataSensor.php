@@ -69,23 +69,46 @@ class addDataSensor extends Controller
     $id_station = $sensor_value ->id_station;
     $warning = App\WarningSetup::where('id_station',$id_station)->get();
     $warning_value = $warning[0];
-
-
+    $sensor_over = array(
+        "sensor_over_1"=> 0,
+        "sensor_over_2"=> 0,
+        "sensor_over_3"=> 0,
+        "sensor_over_4"=> 0,
+    );
+    $sensor_over = (object) $sensor_over;
 
     if($warning_value->ss1_sign==1 AND $sensor_value->ss1 >= $warning_value->ss1){
-        Mail::send('mail-warning', array('name'=>'name','email'=>'email', 'content'=>'content'),function($message){
-          $message->to('pakpham@gmail.com', 'Khuong')->subject('WARNING STATION 1');});
-        echo "SEND EMAIL!";
-    } elseif ($warning_value->ss1_sign==0 AND $sensor_value->ss1 <= $warning_value->ss1) {
-        Mail::send('mail-warning', array('name'=>'name','email'=>'email', 'content'=>'content'),function($message){
-          $message->to('pakpham@gmail.com', 'Khuong')->subject('WARNING STATION 1');});
-        echo "SEND EMAIL!";
+        $sensor_over->sensor_over_1 = 1;
+    }if ($warning_value->ss1_sign==0 AND $sensor_value->ss1 <= $warning_value->ss1) {
+        $sensor_over->sensor_over_1 = 1;
+    }if($warning_value->ss2_sign==1 AND $sensor_value->ss2 >= $warning_value->ss2){
+        $sensor_over->sensor_over_2 = 1;
+    }if ($warning_value->ss2_sign==0 AND $sensor_value->ss2 <= $warning_value->ss2) {
+        $sensor_over->sensor_over_2 = 1;
+    }if($warning_value->ss3_sign==1 AND $sensor_value->ss3 >= $warning_value->ss3){
+        $sensor_over->sensor_over_3 = 1;
+    }if ($warning_value->ss3_sign==0 AND $sensor_value->ss3 <= $warning_value->ss3) {
+        $sensor_over->sensor_over_3 = 1;
+    }if($warning_value->ss4_sign==1 AND $sensor_value->ss4 >= $warning_value->ss4){
+        $sensor_over->sensor_over_4 = 1;
+    }if ($warning_value->ss4_sign==0 AND $sensor_value->ss4 <= $warning_value->ss4) {
+        $sensor_over->sensor_over_4 = 1;
     }
 
 
+    if($sensor_over->sensor_over_1 OR $sensor_over->sensor_over_2 OR $sensor_over->sensor_over_3 OR $sensor_over->sensor_over_4){
 
-    else{
-        echo "DON'T SEND WARNING!";
+        $list_warning_mail = App\WarningMail::select('mail')->get();
+        $list_mail = [];
+        $temp = ['pakpham@gmail.com','anhkhuong975@gmail.com'];
+        for ($i=0; $i <count($list_warning_mail) ; $i++) { 
+            $list_mail[$i] = $list_warning_mail[$i]->mail;
+        }
+        Mail::send('mail-warning', array('warning_value'=>$sensor_value,'sensor_over'=>$sensor_over),function($message) use ($list_mail){
+          $message->to($list_mail)->subject('WARNING STATION 1');});
+        //echo "SEND EMAIL!";
+    }else{
+        //echo "DON'T SEND WARNING!";
     }
 
   }

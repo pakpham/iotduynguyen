@@ -5,7 +5,7 @@
                         Copyright &copy; 2018 DUY NGUYỄN
                     </div>
                     <div class="col-sm-6 text-right">
-                        Designed by <a href="https://colorlib.com">PAK</a>
+                        Designed by <a href="">PAK</a>
                     </div>
                 </div>
             </div>

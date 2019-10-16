@@ -1,10 +1,13 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App;
 
 class warningController extends Controller
 {
+
+
     public function warningSetup(){
     	$warning1 = App\WarningSetup::where('id_station',1)->get();
     	$warning2 = App\WarningSetup::where('id_station',2)->get();
@@ -38,8 +41,6 @@ class warningController extends Controller
      public function setWarningSSS4(Request $data){
     	return $data;
     }
-
-
 
     public function resetWarning(Request $request){
    		App\WarningSetup::get()->each->delete();
@@ -95,7 +96,24 @@ class warningController extends Controller
     	return "DONE";
     }
 
-    public function test(){
-    	return "test";
+    public function addWarningMail(Request $request){
+        $mail_warning = new App\WarningMail;
+        $mail_warning->mail = $request->warning_mail;
+        $mail_warning->name = Auth::user()->name;
+        $mail_warning->save();
+    	return "Add e-mail: ".$mail_warning->mail." complete!";
+    }
+
+    public function getWarningListMail(){
+        $warning_list_mail = App\WarningMail::all();
+        return $warning_list_mail;
+    }
+    public function delWarningMail(Request $request){
+        $result = App\WarningMail::where('id',$request->id)->delete();
+        if ($result ==1 ){
+            return "DONE, Deleted!";
+        }else{
+            return "Something error!";
+        }
     }
 }

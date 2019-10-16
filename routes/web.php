@@ -110,6 +110,9 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'], function(){
 	Route::get('/setWarningSSS3', 'warningController@setWarningSSS3');
 	Route::get('/setWarningSSS4', 'warningController@setWarningSSS4');
 	Route::post('/resetWarning', 'warningController@resetWarning');
+	Route::get('/add-warning-mail','warningController@addWarningMail');
+	Route::get('/get-warning-list-mail','warningController@getWarningListMail');
+	Route::get('/del-warning-mail','warningController@delWarningMail');
 
 });
 
