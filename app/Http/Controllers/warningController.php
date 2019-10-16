@@ -1,8 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
-
 use Illuminate\Http\Request;
 use App;
 
@@ -14,7 +11,7 @@ class warningController extends Controller
     	$warning3 = App\WarningSetup::where('id_station',3)->get();
     	$warning4 = App\WarningSetup::where('id_station',4)->get();
 
-   
+
     	return view('pages.warning-setup',['sss1'=>$warning1,'sss2'=>$warning2,'sss3'=>$warning3,'sss4'=>$warning4]);
     }
 
@@ -30,10 +27,7 @@ class warningController extends Controller
     		'ss3_sign'	=>	$request->warning_sign_ss1_3,
     		'ss4_sign'	=>	$request->warning_sign_ss1_4,
     	]);
-
     	return $warning;
-
-
     }
      public function setWarningSSS2(Request $data){
     	return $data;
@@ -100,7 +94,6 @@ class warningController extends Controller
     	
     	return "DONE";
     }
-
 
     public function test(){
     	return "test";
