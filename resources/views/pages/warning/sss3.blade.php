@@ -8,11 +8,11 @@
             <div class="col-sm-4">
               <input type="number" class="form-control" id="warning-ss3-1" name="warning-ss1-1" placeholder="number" value="@if(isset($sss3)){{$sss3[0]->ss1}}@endif">
             </div>
-            <div class="col-sm-2">Cảnh báo khi:</div>
+            <div class="col-sm-2">Warning when:</div>
             <div class="col-sm-4">
               <div class="form-group">
                 <select class="form-control" id="warning-sign-ss3-1" name="warning-sign-ss3-1"  >
-                  <option value="1" >Cao hơn giá trị ngưỡng</option>
+                  <option value="1" >Above threshold</option>
                   <option <?php if(isset($sss3)) if($sss3[0]->ss1_sign == 0 )echo'selected';?>  value="0">Thấp hơn giá trị ngưỡng</option>
                 </select>
               </div>                  
@@ -24,11 +24,11 @@
             <div class="col-sm-4">
               <input type="number" class="form-control" id="warning-ss3-2" name="warning-ss3-2" placeholder="number"value="@if(isset($sss3)){{$sss3[0]->ss2}}@endif">
             </div>
-            <div class="col-sm-2">Cảnh báo khi:</div>
+            <div class="col-sm-2">Warning when:</div>
             <div class="col-sm-4">
               <div class="form-group">
                 <select class="form-control" id="warning-sign-ss3-2" name="warning-sign-ss3-2">
-                  <option value="1">Cao hơn giá trị ngưỡng</option>
+                  <option value="1">Above threshold</option>
                   <option <?php if(isset($sss3)) if($sss3[0]->ss2_sign == 0 )echo'selected';?> value="0">Thấp hơn giá trị ngưỡng</option>
                 </select>
               </div>                  
@@ -40,11 +40,11 @@
             <div class="col-sm-4">
               <input type="number" class="form-control" id="warning-ss3-3" name="warning-ss1-3" placeholder="number" value="@if(isset($sss3)){{$sss3[0]->ss3}}@endif">
             </div>
-            <div class="col-sm-2">Cảnh báo khi:</div>
+            <div class="col-sm-2">Warning when:</div>
             <div class="col-sm-4">
               <div class="form-group">
                 <select class="form-control" id="warning-sign-ss3-3" name="warning-sign-ss3-3">
-                  <option value="1">Cao hơn giá trị ngưỡng</option>
+                  <option value="1">Above threshold</option>
                   <option <?php if(isset($sss3)) if($sss3[0]->ss3_sign == 0 )echo'selected';?> value="0">Thấp hơn giá trị ngưỡng</option>
                 </select>
               </div>                  
@@ -56,11 +56,11 @@
             <div class="col-sm-4">
               <input type="number" class="form-control" id="warning-ss3-4" name="warning-ss3-4" placeholder="number" value="@if(isset($sss3)){{$sss3[0]->ss4}}@endif">
             </div>
-            <div class="col-sm-2">Cảnh báo khi:</div>
+            <div class="col-sm-2">Warning when:</div>
             <div class="col-sm-4">
               <div class="form-group">
                 <select class="form-control" id="warning-sign-ss3-4" name="warning-sign-ss3-4">
-                  <option value="1">Cao hơn giá trị ngưỡng</option>
+                  <option value="1">Above threshold</option>
                   <option <?php if(isset($sss3)) if($sss3[0]->ss4_sign == 0 )echo'selected';?> value="0">Thấp hơn giá trị ngưỡng</option>
                 </select>
               </div>                  
