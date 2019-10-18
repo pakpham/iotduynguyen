@@ -1,4 +1,4 @@
-  <div class="col col-lg-12">
+  <div class="col-sm-12">
     <div class="card">
       <div class="card-header">Station 3</div>
       <div class="card-body">

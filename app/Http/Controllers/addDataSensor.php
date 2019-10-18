@@ -105,9 +105,16 @@ class addDataSensor extends Controller
         for ($i=0; $i <count($list_warning_mail) ; $i++) { 
             $list_mail[$i] = $list_warning_mail[$i]->mail;
         }
-        Mail::send('mail-warning', array('warning_value'=>$sensor_value,'sensor_over'=>$sensor_over),function($message) use ($list_mail){
+
+        if($id_station == 1){
+            Mail::send('mail-warning', array('warning_value'=>$sensor_value,'sensor_over'=>$sensor_over),function($message) use ($list_mail){
           $message->to($list_mail)->subject('WARNING');});
-        //echo "SEND EMAIL!";
+        }
+        if($id_station ==3) {
+            Mail::send('mail-warning-3', array('warning_value'=>$sensor_value,'sensor_over'=>$sensor_over),function($message) use ($list_mail){
+          $message->to($list_mail)->subject('WARNING');});
+        }
+       
     }else{
         //echo "DON'T SEND WARNING!";
     }
