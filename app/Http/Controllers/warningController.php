@@ -32,12 +32,26 @@ class warningController extends Controller
     	]);
     	return $warning;
     }
+
      public function setWarningSSS2(Request $data){
     	return $data;
     }
-     public function setWarningSSS3(Request $data){
-    	return $data;
+
+     public function setWarningSSS3(Request $request){
+    	$request = (object)$request->warning_value;
+        $warning = App\WarningSetup::where('id_station',$request->id_station)->update([
+            'ss1'   =>  $request->warning_ss3_1,
+            'ss2'   =>  $request->warning_ss3_2,
+            'ss3'   =>  $request->warning_ss3_3,
+            'ss4'   =>  $request->warning_ss3_4,
+            'ss1_sign'  =>  $request->warning_sign_ss3_1,
+            'ss2_sign'  =>  $request->warning_sign_ss3_2,
+            'ss3_sign'  =>  $request->warning_sign_ss3_3,
+            'ss4_sign'  =>  $request->warning_sign_ss3_4,
+        ]);
+        return $warning;
     }
+
      public function setWarningSSS4(Request $data){
     	return $data;
     }

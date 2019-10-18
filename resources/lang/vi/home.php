@@ -20,10 +20,10 @@ return [
     'tram3' => 'Trạm 3',
     'tram4' => 'Trạm 4',
 
-    'cambien1' => 'Cảm biến 1',
-    'cambien2' => 'Cảm biến 2',
-    'cambien3' => 'Cảm biến 3',
-    'cambien4' => 'Cảm biến 4',
+    'cambien1' => 'Trạm cảm biến 1',
+    'cambien2' => 'Trạm cảm biến 2',
+    'cambien3' => 'Trạm cảm biến 3',
+    'cambien4' => 'Trạm cảm biến 4',
 
     'doamkhongkhi' => 'Độ ẩm không khí',
     'nhietdokhongkhi' => 'Nhiệt độ không khí',

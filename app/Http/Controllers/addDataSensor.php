@@ -48,6 +48,7 @@ class addDataSensor extends Controller
     $data->save();
     //return "Saved to DataBase ";
     event(new App\Events\PusherEvent($data));
+    $this->warningMail($data);
     //return $data->created_at;
   }
   public function addDataSensor4(Request $request){
@@ -61,7 +62,7 @@ class addDataSensor extends Controller
     $data->save();
     //return "Saved to DataBase ";
     event(new App\Events\PusherEvent($data));
-    return var_dump($data);
+    //return var_dump($data);
   }
 
 
@@ -105,7 +106,7 @@ class addDataSensor extends Controller
             $list_mail[$i] = $list_warning_mail[$i]->mail;
         }
         Mail::send('mail-warning', array('warning_value'=>$sensor_value,'sensor_over'=>$sensor_over),function($message) use ($list_mail){
-          $message->to($list_mail)->subject('WARNING STATION 1');});
+          $message->to($list_mail)->subject('WARNING');});
         //echo "SEND EMAIL!";
     }else{
         //echo "DON'T SEND WARNING!";

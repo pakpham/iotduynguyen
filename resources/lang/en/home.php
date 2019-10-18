@@ -21,10 +21,10 @@ return [
     'tram3' => 'Station 3',
     'tram4' => 'Station 4',
 
-    'cambien1' => 'Sensor 1',
-    'cambien2' => 'Sensor 2',
-    'cambien3' => 'Sensor 3',
-    'cambien4' => 'Sensor 4',
+    'cambien1' => 'Sensor Station 1',
+    'cambien2' => 'Sensor Station 2',
+    'cambien3' => 'Sensor Station 3',
+    'cambien4' => 'Sensor Station 4',
 
     'doamkhongkhi' => 'Air Humidity',
     'nhietdokhongkhi' => 'Air Temperature',

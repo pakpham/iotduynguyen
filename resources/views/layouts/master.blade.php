@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head> 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE
+    =edge">
     <title>Duy Nguyen - IoT Monitor</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,6 +34,7 @@
 
     <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
     {{-- TIMER PICKER --}}
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
     <script src="../admin_asset/assets/js/lib/moment/moment.js"></script>

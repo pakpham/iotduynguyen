@@ -5,8 +5,12 @@
 
 
 
-String url1 = "http://iotduynguyen.cf/public/add-data";
-String url2 = "http://iotduynguyen.cf/public/add-data-2";
+//String url1 = "http://iotduynguyen.cf/public/add-data";
+//String url2 = "http://iotduynguyen.cf/public/add-data-2";
+
+String url1 = "http://iot.duy-nguyen.com/public/add-data";
+String url2 = "http://iot.duy-nguyen.com/public/add-data-2";
+
 String url = "";
 String data = "";
 

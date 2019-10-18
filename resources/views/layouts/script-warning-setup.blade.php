@@ -2,6 +2,9 @@
 	var data_temp;
 	var warning_ss1_1;
 	var warning_sign_ss1_1;
+	var warning_ss3_1;
+	var warning_sign_ss3_1;
+
 	var warning_list_mail_html='';
 	var updateWarningMailList;
 
@@ -22,6 +25,24 @@
                   	data_temp = msg;
                   	$("#btn-warning-sss1").removeClass('disabled');
 					$("#btn-warning-sss1").text('Save');
+               }
+            });
+		});
+		$("#btn-warning-sss3").click(function(){
+			$("#btn-warning-sss3").addClass('disabled');
+			$("#btn-warning-sss3").text('Seting...');
+	     	$.ajax({
+               type:'get',
+               url:'setWarningSSS3',
+               data:{
+               	_token: "{{ csrf_token() }}",
+               	warning_value: readSSS3(),
+               },
+               success:function(msg) {
+                  	alert('Done. Set complete!');
+                  	data_temp = msg;
+                  	$("#btn-warning-sss3").removeClass('disabled');
+					$("#btn-warning-sss3").text('Save');
                }
             });
 		});
@@ -140,6 +161,27 @@
 			warning_ss1_4 : warning_ss1_4,
 			warning_sign_ss1_4 : warning_sign_ss1_4,
 			id_station: 1,
+		}
+	}
+	function readSSS3 (){
+		warning_ss3_1 		= document.getElementById('warning-ss3-1').value;
+		warning_sign_ss3_1 	= document.getElementById('warning-sign-ss3-1').value;
+		warning_ss3_2 		= document.getElementById('warning-ss3-2').value;
+		warning_sign_ss3_2 	= document.getElementById('warning-sign-ss3-2').value;
+		warning_ss3_3 		= document.getElementById('warning-ss3-3').value;
+		warning_sign_ss3_3 	= document.getElementById('warning-sign-ss3-3').value;
+		warning_ss3_4 		= document.getElementById('warning-ss3-4').value;
+		warning_sign_ss3_4 	= document.getElementById('warning-sign-ss3-4').value;
+		return {
+			warning_ss3_1 : warning_ss3_1,
+			warning_sign_ss3_1 : warning_sign_ss3_1,
+			warning_ss3_2 : warning_ss3_2,
+			warning_sign_ss3_2 : warning_sign_ss3_2,
+			warning_ss3_3 : warning_ss3_3,
+			warning_sign_ss3_3 : warning_sign_ss3_3,
+			warning_ss3_4 : warning_ss3_4,
+			warning_sign_ss3_4 : warning_sign_ss3_4,
+			id_station: 3,
 		}
 	}
 

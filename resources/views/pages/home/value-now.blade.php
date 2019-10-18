@@ -435,4 +435,4 @@
 </div> 
 </div>
 
-@include ('layouts.script-value-now');
+@include ('layouts.script-value-now')
