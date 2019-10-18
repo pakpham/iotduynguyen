@@ -12,6 +12,8 @@
 */
 
 
+Route::get('/del-data','pakController@delData');
+
 Route::get('/test-mail','pakController@testMail');
 
 Route::get('/fb-ms-api', 'fbController@index');

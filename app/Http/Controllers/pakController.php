@@ -215,4 +215,11 @@ class pakController extends Controller
     }
 
 
+    public function delData(){
+      App\DataSensor::get()->each->delete();
+      App\DataSensor2::get()->each->delete();
+      App\DataSensor3::get()->each->delete();
+      App\DataSensor4::get()->each->delete();
+      return "DELTE ALL";
+    }
 }
