@@ -120,10 +120,10 @@
       },
       {
         title: "Soil Temperature",
-        lineColor: "#FFF100",
-        tickColor: "#FFF100",
-        labelFontColor: "#FFF100",
-        titleFontColor: "#FFF100",
+        lineColor: "#140659",
+        tickColor: "#140659",
+        labelFontColor: "#140659",
+        titleFontColor: "#140659",
         suffix: "°C"
       }],
 
@@ -164,7 +164,7 @@
       },{
         type: "line",
         name: "Soil Temperature",
-        color: "#FFF100",
+        color: "#140659",
         axisYType: "secondary",
         yValueFormatString: "### °C",
         showInLegend: true,
@@ -213,10 +213,10 @@
       },
       {
         title: "Soil Temperature",
-        lineColor: "#FFF100",
-        tickColor: "#FFF100",
-        labelFontColor: "#FFF100",
-        titleFontColor: "#FFF100",
+        lineColor: "#140659",
+        tickColor: "#140659",
+        labelFontColor: "#140659",
+        titleFontColor: "#140659",
         suffix: "°C"
       }],
 
@@ -257,7 +257,7 @@
       },{
         type: "line",
         name: "Soil Temperature",
-        color: "#FFF100",
+        color: "#140659",
         axisYType: "secondary",
         yValueFormatString: "### °C",
         showInLegend: true,
@@ -306,10 +306,10 @@
       },
       {
         title: "Air Pressure",
-        lineColor: "#FFF100",
-        tickColor: "#FFF100",
-        labelFontColor: "#FFF100",
-        titleFontColor: "#FFF100",
+        lineColor: "#140659",
+        tickColor: "#140659",
+        labelFontColor: "#140659",
+        titleFontColor: "#140659",
         suffix: "Pa"
       }],
 
@@ -350,7 +350,7 @@
       },{
         type: "line",
         name: "Air Pressure",
-        color: "#FFF100",
+        color: "#140659",
         axisYType: "secondary",
         yValueFormatString: "### Pa",
         showInLegend: true,
@@ -399,10 +399,10 @@
       },
       {
         title: "Air Pressure",
-        lineColor: "#FFF100",
-        tickColor: "#FFF100",
-        labelFontColor: "#FFF100",
-        titleFontColor: "#FFF100",
+        lineColor: "#140659",
+        tickColor: "#140659",
+        labelFontColor: "#140659",
+        titleFontColor: "#140659",
         suffix: "Pa"
       }],
 
@@ -443,7 +443,7 @@
       },{
         type: "line",
         name: "Air Pressure",
-        color: "#FFF100",
+        color: "#140659",
         axisYType: "secondary",
         yValueFormatString: "### Pa",
         showInLegend: true,
