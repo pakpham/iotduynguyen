@@ -12,7 +12,7 @@
 
 			<div class=" col-lg-12 card">
 				<div class="card-header">
-					Reset to default
+					{{trans('warning.duavematdinh')}}
 				</div>
 				<div class="card-body">
 					<button  id="btn-warning-reset" type="" class="btn btn-primary" >Reset</button>
@@ -21,7 +21,7 @@
 
 
 			<div class="col-lg-12 card">
-				<div class="card-header">List mail</div>
+				<div class="card-header">{{trans('warning.danhsachmail')}}</div>
 				<div class="card-body">
 					<ul class="list-group" id="warning-list-mails">
 						<li class="list-group-item">Loading ...<button class="btn btn-danger float-right">DELETE</button></li>
@@ -32,7 +32,7 @@
 							<input id="input-warning-mail" class="form-control" type="mail" name="">
 						</div>
 						<div class="col-sm-2">
-							<button id="btn-add-warning-mail" class="btn btn-primary">Add</button>
+							<button id="btn-add-warning-mail" class="btn btn-primary">{{trans('warning.them')}}</button>
 						</div>
 					</div>
 				</div>
