@@ -16,7 +16,7 @@ return [
     'luu' => 'Save',
     'thaphonnguong'=>'Below threshold',
     'caohonnguong'  => 'Above threshold',
-    'capnhatkhi' => 'Update when',
+    'capnhatkhi' => 'Warning when',
     'danhsachmail'=> 'List mail',
     'them'=>'Add',
     'xoa'=> 'Delete',
